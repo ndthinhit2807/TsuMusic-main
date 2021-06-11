@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:padding="7dp"
+        android:id="@+id/relavtivetopiccatelory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/txttile_topiccatelory"
+            android:textStyle="bold"
+            android:text="CHỦ ĐỀ VÀ THỂ LOẠI"
+            android:textSize="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:id="@+id/txt_titlemore"
+            android:text="@string/More"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="right"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            >
+
+
+        </TextView>
+
+    </RelativeLayout>
+    <HorizontalScrollView
+        android:scrollbars="none"
+        android:id="@+id/honrizontal_topiccatelogy"
+        android:layout_below="@id/relavtivetopiccatelory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </HorizontalScrollView>
+</RelativeLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.tsumusic">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".Activity.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo_app"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo_app_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TsuMusic">
+        <activity
+            android:name=".Activity.AppinformationActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.ChangepasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.LyricActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.All_Album_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.All_Toplist_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.PlayMusicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ListSongActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.All_Genre_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.All_Singer_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Startup.WelcomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ForgotpasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Startup.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

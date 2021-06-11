@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Startup.SplashActivity"
+    android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/mainViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Button" />
+    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/mainTabLayout"
+        app:tabIndicatorColor="@color/tomato"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/tomato"
+        app:tabIndicatorHeight="1dp"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:tabIndicatorGravity="top"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        >
+
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

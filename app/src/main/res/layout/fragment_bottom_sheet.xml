@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/custom_backgroud"
+    android:layout_height="wrap_content">
+    <TextView
+        android:text="Thông Tin Bài Hát"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:background="@color/purple_200"
+        android:layout_height="30dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:id="@+id/tenbaihat"
+            android:text="Tên Bài Hát"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/textviewtenbaihatdangnghe"
+            android:layout_toRightOf="@+id/tenbaihat"
+            android:text="Yêu Đơn Phương"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tenbaihat"
+            android:id="@+id/tennghesi"
+            android:text="Tên Nghệ Sĩ"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:id="@+id/textviewtennghesihat"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tenbaihat"
+            android:layout_marginLeft="36dp"
+            android:layout_toRightOf="@+id/tennghesi"
+            android:text="Only C"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tennghesi"
+            android:id="@+id/theloai"
+            android:text="Thể Loại"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:id="@+id/textviewtheloainhac"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tennghesi"
+            android:layout_marginLeft="59dp"
+            android:layout_toRightOf="@+id/theloai"
+            android:text="Pop"/>
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/theloai"
+            android:id="@+id/ngayphathanh"
+            android:text="Ngày phát hành"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:id="@+id/textviewngayphathanhbaihat"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/theloai"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/ngayphathanh"
+            android:text="24-05-2021"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/ngayphathanh"
+            android:id="@+id/luotnghe"
+            android:text="Lượt nghe"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:id="@+id/textviewluotnghebaihat"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/ngayphathanh"
+            android:layout_marginLeft="49dp"
+            android:layout_toRightOf="@+id/luotnghe"
+            android:text="1M"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

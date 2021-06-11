@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">TsuMusic</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="More"><u>Xem thêm ></u></string>
+    <string name="now_playing"><b>Now Playing</b></string>
+    <string name="module_common_welcome_start">Bắt Đầu</string>
+    <string name="version">Phiên bản 1.0</string>
+    <string name="don_t_have_an_account_sing_up_now">Don\'t have an account sing up now</string>
+    <string name="lyric">Lyric</string>
+    <string name="name">Họ tên</string>
+    <string name="user_name">Tên đăng nhập</string>
+    <string name="welcome_tsumusic">Welcome TsuMusic</string>
+    <string name="sign_in_to_continue">Sign In To Continue</string>
+    <string name="you_email_com">Email của bạn</string>
+    <string name="required">Yêu cầu*</string>
+    <string name="password">Mật khẩu</string>
+    <string name="oldpassword">Mật khẩu cũ</string>
+    <string name="newpassword">Mật khẩu mới</string>
+    <string name="confirmnewpassword">Xác nhận mật khẩu mới</string>
+    <string name="introduce">Ứng dụng nghe nhạc mọi lúc, mọi nơi chỉ cần có kết nối internet. Bạn có thể lắng nghe những bài hát, những album, hoặc những playlist hay nhất của nhạc sĩ bạn yêu thích.</string>
+    <string name="don_t_have_account">Don\'t have account</string>
+    <string name="confirm_password">Confirm PassWord</string>
+    <string name="ng_xu_t_t_i_kho_n">Đăng Xuất</string>
+    <string name="dangnhap">Đăng Nhập</string>
+</resources>

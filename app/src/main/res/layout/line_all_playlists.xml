@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:layout_marginBottom="20dp">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        app:cardCornerRadius="6dp"
+        android:elevation="10dp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/framelayout">
+        <ImageView
+            android:id="@+id/imageviewhinhplaylist"
+            android:layout_width="185dp"
+            android:layout_height="185dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"/>
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="#040303"
+        android:gravity="left"
+        android:maxWidth="185dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:textSize="16sp"
+        android:text="Tên danh sách playlist"
+        android:id="@+id/textviewtendanhsachcacplaylists"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

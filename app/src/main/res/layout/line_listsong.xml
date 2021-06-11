@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="60dp"
+    android:layout_marginBottom="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativelistsongupdate">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:layout_width="60dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/cardviewbaihat"
+            android:layout_height="60dp"
+            app:cardCornerRadius="6dp"
+            android:elevation="10dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="7dp"
+            android:id="@+id/textviewindex"/>
+        </androidx.cardview.widget.CardView>
+        <com.google.android.material.textview.MaterialTextView
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/cardviewbaihat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxWidth="250dp"
+            android:singleLine="true"
+            android:id="@+id/textviewtencakhuc"
+            android:textColor="@color/black"
+            android:text="Tên Ca Khúc"
+            android:layout_marginLeft="5dp"
+            />
+        <TextView
+            android:textSize="15sp"
+            android:singleLine="true"
+            android:layout_below="@id/textviewtencakhuc"
+            android:layout_toRightOf="@id/cardviewbaihat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ca Sĩ"
+            android:id="@+id/textviewtencasi"
+            android:layout_marginLeft="5dp"/>
+        <ImageView
+            android:layout_width="11dp"
+            android:src="@drawable/ic_headphone"
+            android:layout_toRightOf= "@+id/textviewtencasi"
+            android:layout_below="@+id/textviewtencakhuc"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/imageviewlistsongluotnghe"
+            android:layout_height="11dp"/>
+        <TextView
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/textviewtencakhuc"
+            android:layout_toRightOf= "@+id/imageviewlistsongluotnghe"
+            android:text="Lượt nghe"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/black"
+            android:id="@+id/textviewlistsonghienthiluotnghe"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_vertical_dots"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/more"
+
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

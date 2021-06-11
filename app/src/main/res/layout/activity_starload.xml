@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/custom_backgroud"
+    android:layout_height="match_parent"
+
+    tools:context=".Startup.SplashActivity"
+    android:id="@+id/asdx">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:src="@drawable/logoapp"
+        android:layout_marginTop="210dp"
+        android:id="@+id/imageviewlogoapp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/textviewappname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageviewlogoapp"
+        android:fontFamily="@font/utm_sharnay"
+        android:textSize="50dp">
+
+    </TextView>
+
+<!--    <View-->
+
+<!--        android:id="@+id/viewSupporterForAlbumArt"-->
+<!--        android:layout_width="1dp"-->
+<!--        android:layout_height="1dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/layoutPlayer"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" >-->
+
+<!--    </View>-->
+
+<!--    <View-->
+<!--        android:id="@+id/viewSupporterForBackGround"-->
+<!--        android:layout_width="1dp"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/layoutPlayer"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/layoutPlayer"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/layoutPlayer" />-->
+
+<!--    <ImageView-->
+<!--        android:visibility="gone"-->
+<!--        android:id="@+id/imageviewlogoapp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@mipmap/logo_app"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/viewSupporterForAlbumArt"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@id/viewSupporterForAlbumArt"-->
+<!--        android:background="@color/transparent"-->
+
+
+<!--&gt;-->
+
+<!--    </ImageView>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/layoutPlayer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        app:layout_constraintBottom_toBottomOf="parent">-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+</RelativeLayout>
