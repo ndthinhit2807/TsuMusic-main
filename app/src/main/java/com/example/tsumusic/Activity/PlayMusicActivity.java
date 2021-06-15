@@ -1,6 +1,7 @@
 package com.example.tsumusic.Activity;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
@@ -11,8 +12,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -135,7 +138,7 @@ public class PlayMusicActivity extends AppCompatActivity {
                         imgrandom.setImageResource(R.drawable.ic_shuffle);
                         repeatnhac = true;
                     } else {
-                        imgrepeat.setImageResource(R.drawable.ic_repeattrue);
+                        imgrepeat.setImageResource(R.drawable.ic_repeat_one);
                         repeatnhac = true;
                     }
                 } else {
@@ -155,7 +158,7 @@ public class PlayMusicActivity extends AppCompatActivity {
                         imgrepeat.setImageResource(R.drawable.ic_repeat);
 
                     }
-                    imgrandom.setImageResource(R.drawable.ic_shuffle);
+                    imgrandom.setImageResource(R.drawable.ic_shuffle_activate);
                     checkrandom = true;
 
                 } else {
@@ -379,16 +382,52 @@ public class PlayMusicActivity extends AppCompatActivity {
         });*/
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);   //Ẩn title toolbar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+
+//                if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+//                    mediaPlayer.stop();
+//                    mangbaihat.clear();
+//                }
+//                finish();
+//                Animatoo.animateSlideDown(PlayMusicActivity.this);
+//            }
+//        });
+        ImageView imageView = (ImageView)findViewById(R.id.imageback);
+
+        //set the ontouch listener
+        imageView.setOnTouchListener(new View.OnTouchListener() {
+
             @Override
-            public void onClick(View v) {
-                if (mediaPlayer != null && mediaPlayer.isPlaying()) {
-                    mediaPlayer.stop();
-                    mangbaihat.clear();
+            public boolean onTouch(View v, MotionEvent event) {
+
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN: {
+                        ImageView view = (ImageView) v;
+                        //overlay is black with transparency of 0x77 (119)
+                        view.getDrawable().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
+                        view.invalidate();
+                        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+                            mediaPlayer.stop();
+                            mangbaihat.clear();
+                        }
+                        finish();
+                        Animatoo.animateSlideDown(PlayMusicActivity.this);
+                        break;
+                    }
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL: {
+                        ImageView view = (ImageView) v;
+                        //clear the overlay
+                        view.getDrawable().clearColorFilter();
+                        view.invalidate();
+                        break;
+                    }
                 }
-                finish();
-                Animatoo.animateSlideDown(PlayMusicActivity.this);
+
+                return false;
             }
         });
 

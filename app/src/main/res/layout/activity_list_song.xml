@@ -65,7 +65,7 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:tint="@color/white"
-        android:src="@drawable/ic_play"
+        android:src="@drawable/play_to_pause_linear_out_slow_in"
         android:scaleType="fitXY"
         app:fabSize="auto"
         android:id="@+id/floatingbutton"
@@ -73,6 +73,7 @@
         app:layout_anchor="@id/viewview"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         android:layout_width="wrap_content"
+        android:backgroundTint="@color/purple_primary"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
