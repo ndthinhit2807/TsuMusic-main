@@ -160,7 +160,7 @@
                 android:background="@drawable/play_button_background"
                 android:contentDescription="@string/app_name"
                 android:padding="12dp"
-                android:src="@drawable/ic_play"
+                android:src="@drawable/pause_to_play"
                 android:tint="@color/colorBlack" />
 
             <ImageButton

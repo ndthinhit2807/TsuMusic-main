@@ -116,10 +116,10 @@ public class PlayMusicActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (mediaPlayer.isPlaying()) {
                     mediaPlayer.pause();
-                    imgplay.setImageResource(R.drawable.ic_play);
+                    imgplay.setImageResource(R.drawable.play_to_pause_linear_out_slow_in);
                 } else {
                     mediaPlayer.start();
-                    imgplay.setImageResource(R.drawable.ic_pause);
+                    imgplay.setImageResource(R.drawable.pause_to_play);
                 }
 
             }
@@ -192,7 +192,7 @@ public class PlayMusicActivity extends AppCompatActivity {
                         mediaPlayer = null;
                     }
                     if (positon < (mangbaihat.size())) {
-                        imgplay.setImageResource(R.drawable.ic_pause);
+                        imgplay.setImageResource(R.drawable.pause_to_play);
                         positon++;
                         if (repeatnhac == true) {
                             if (positon == 0) {
@@ -253,7 +253,7 @@ public class PlayMusicActivity extends AppCompatActivity {
                         mediaPlayer = null;
                     }
                     if (positon < (mangbaihat.size())) {
-                        imgplay.setImageResource(R.drawable.ic_pause);
+                        imgplay.setImageResource(R.drawable.pause_to_play);
                         positon--;
                         if (positon < 0) {
                             positon = mangbaihat.size() - 1;
@@ -404,7 +404,7 @@ public class PlayMusicActivity extends AppCompatActivity {
         if (mangbaihat.size() > 0) {
 //       getSupportActionBar().setTitle(mangbaihat.get(positon).getTenbaihat());
             new PlayMp3().execute(mangbaihat.get(positon).getUrlbaihat());
-            imgplay.setImageResource(R.drawable.ic_pause);
+            imgplay.setImageResource(R.drawable.pause_to_play);
         }
     }
 
@@ -437,16 +437,19 @@ public class PlayMusicActivity extends AppCompatActivity {
             Updatetime();
         }
     }
-
-    //Dừng nhạc
+//    vô hiệu hoá button back
     @Override
-    protected void onStop() {
-        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
-            mediaPlayer.stop();
-            //mangbaihat.clear();
-        }
-        super.onStop();
+    public void onBackPressed() {
     }
+    //Dừng nhạc
+//    @Override
+//    protected void onStop() {
+//        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+//            mediaPlayer.stop();
+//            //mangbaihat.clear();
+//        }
+//        super.onStop();
+//    }
 
     // Chỉnh thời gian bài hát
     private void TimeSong() {
@@ -489,7 +492,7 @@ public class PlayMusicActivity extends AppCompatActivity {
             public void run() {
                 if (nextnhac == true) {
                     if (positon < (mangbaihat.size())) {
-                        imgplay.setImageResource(R.drawable.ic_pause);
+                        imgplay.setImageResource(R.drawable.pause_to_play);
                         positon++;
                         if (repeatnhac == true) {
                             if (positon == 0) {
