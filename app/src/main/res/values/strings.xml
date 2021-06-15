@@ -22,4 +22,6 @@
     <string name="confirm_password">Confirm PassWord</string>
     <string name="ng_xu_t_t_i_kho_n">Đăng Xuất</string>
     <string name="dangnhap">Đăng Nhập</string>
+    <string name="icon_desc">Icon button</string>
+
 </resources>
