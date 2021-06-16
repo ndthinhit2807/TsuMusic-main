@@ -7,43 +7,63 @@
     android:background="@drawable/custom_backgroud"
     tools:context=".Startup.SplashActivity">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/modern_nps_head"
+    <RelativeLayout
+        android:id="@+id/relativeheader"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:fontFamily="@font/utm_ericsson_capital"
-        android:gravity="center"
-        android:text="Now Playing"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="?attr/actionBarSize">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarplaymusic"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/modern_nps_head"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/utm_ericsson_capital"
+            android:gravity="center"
+            android:text="Now Playing"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imageback"
-        style="@style/ButtonStyle36"
-        android:layout_width="55dp"
-        android:layout_height="?attr/actionBarSize"
-        android:gravity="center"
-        android:src="@drawable/ic_down_arrow"
-        android:textAllCaps="true"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imageback"
+            style="@style/ButtonStyle36"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:src="@drawable/ic_down_arrow"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageinfo"
+            style="@style/ButtonStyle36"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/purple_primary"
+            android:gravity="center"
+            android:src="@drawable/ic_more"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <!--    <androidx.appcompat.widget.Toolbar-->
+    <!--        android:id="@+id/toolbarplaymusic"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="?actionBarSize"/>-->
 
     <androidx.viewpager.widget.ViewPager
 
         android:id="@+id/viewPagerplaymusic"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_below="@+id/toolbarplaymusic"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:layout_below="@+id/relativeheader"
         android:layout_centerInParent="true">
 
     </androidx.viewpager.widget.ViewPager>

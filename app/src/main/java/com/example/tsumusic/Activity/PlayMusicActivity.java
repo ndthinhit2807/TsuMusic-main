@@ -1,6 +1,8 @@
 package com.example.tsumusic.Activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -77,6 +79,13 @@ public class PlayMusicActivity extends AppCompatActivity {
         Anhxa();
         eventClick();
     }
+    public void putStringValue(String key, String value) {
+        SharedPreferences sharedPreferences = getSharedPreferences("passinfo", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(key, value);
+        editor.apply();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -85,13 +94,13 @@ public class PlayMusicActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.nghesi:
-                Toast.makeText(this, "Giới thiệu nghệ sĩ", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.thongtin:
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.nghesi:
+//                Toast.makeText(this, "Giới thiệu nghệ sĩ", Toast.LENGTH_SHORT).show();
+//                return true;
+//            case R.id.thongtin:
 //                Toast.makeText(this, "Thông tin bài hát", Toast.LENGTH_SHORT).show();
 //                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PlayMusicActivity.this);
 //                bottomSheetDialog.setContentView(R.layout.fragment_bottom_sheet);
@@ -99,19 +108,21 @@ public class PlayMusicActivity extends AppCompatActivity {
 //                        = new FragmentBottomsheetdialog();
 //                FragmentManager fm = getSupportFragmentManager();
 //                myDialog.show(fm, "FirstBottomSheetDialogFragment");
-//                GetDataIntent();
-//                TextView textView1 =findViewById(R.id.textviewtenbaihatdangnghe);
-//                TextView textView2 =findViewById(R.id.textviewtennghesihat);
-//                textView1.setText(mangbaihat.get(positon).getTenbaihat());
-//                textView2.setText(mangbaihat.get(positon).getTencasi());
-//                Intent intent = new Intent(this,HomeActivity.class);
+////
+//                Intent intent = new Intent(this, SonginfoActivity.class);
+//                putStringValue("tenbaihat", mangbaihat.get(positon).getTenbaihat());
+//                putStringValue("tencasi", mangbaihat.get(positon).getTencasi());
 //                startActivity(intent);
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+//                onStop();
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//
+//    }
 
-    }
 
+    //    click
     private void eventClick() {
         final Handler handler = new Handler();
         // Log.d("LOGGGGG: ", mangbaihat.get(positon).getTenbaihat());
@@ -365,7 +376,7 @@ public class PlayMusicActivity extends AppCompatActivity {
     }
 
     private void Anhxa() {
-        toolbar = findViewById(R.id.toolbarplaymusic);
+//        toolbar = findViewById(R.id.toolbarplaymusic);
         textCurrentTime = findViewById(R.id.textCurrentTime);
         textTotalTime = findViewById(R.id.textTotalTime);
         sktime = findViewById(R.id.playerSeeBar);
@@ -377,8 +388,8 @@ public class PlayMusicActivity extends AppCompatActivity {
         viewPagerplaymusic = findViewById(R.id.viewPagerplaymusic);
         txttenbaihat = findViewById(R.id.textviewtenbaihatplay);
         txttencasi = findViewById(R.id.textviewtencasihat);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(null);   //Ẩn title toolbar
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setTitle(null);   //Ẩn title toolbar
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -393,7 +404,6 @@ public class PlayMusicActivity extends AppCompatActivity {
 //            }
 //        });
         ImageView imageView = (ImageView)findViewById(R.id.imageback);
-
         //set the ontouch listener
         imageView.setOnTouchListener(new View.OnTouchListener() {
 
@@ -428,6 +438,39 @@ public class PlayMusicActivity extends AppCompatActivity {
             }
         });
 
+        ImageView imageinfor = (ImageView) findViewById(R.id.imageinfo);
+        imageinfor.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN: {
+                        ImageView view = (ImageView) v;
+                        //overlay is black with transparency of 0x77 (119)
+                        view.getDrawable().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
+                        view.invalidate();
+                        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PlayMusicActivity.this);
+                        bottomSheetDialog.setContentView(R.layout.fragment_bottom_sheet);
+                        FragmentBottomsheetdialog myDialog
+                                = new FragmentBottomsheetdialog();
+                        FragmentManager fm = getSupportFragmentManager();
+                        myDialog.show(fm, "FirstBottomSheetDialogFragment");
+                        break;
+                    }
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL: {
+                        ImageView view = (ImageView) v;
+                        //clear the overlay
+                        view.getDrawable().clearColorFilter();
+                        view.invalidate();
+                        break;
+                    }
+                }
+
+                return false;
+            }
+        });
 
         adapternhac = new ViewpagerListsongplay(getSupportFragmentManager());
         fragment_listsongplay = new FragmentListsongplay();
