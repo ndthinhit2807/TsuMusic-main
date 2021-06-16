@@ -8,8 +8,12 @@
     <string name="don_t_have_an_account_sing_up_now">Don\'t have an account sing up now</string>
     <string name="lyric">Lyric</string>
     <string name="name">Họ tên</string>
+    <string name="group_name">Made by NVT Group</string>
+    <string name="songinfo">Thông tin bài hát</string>
     <string name="user_name">Tên đăng nhập</string>
     <string name="welcome_tsumusic">Welcome TsuMusic</string>
+    <string name="welcome">Welcome </string>
+    <string name="singer_info">Xem nghệ sĩ</string>
     <string name="sign_in_to_continue">Sign In To Continue</string>
     <string name="you_email_com">Email của bạn</string>
     <string name="required">Yêu cầu*</string>

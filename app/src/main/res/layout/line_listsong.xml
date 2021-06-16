@@ -7,6 +7,7 @@
     android:id="@+id/relativelistsongupdate">
     <RelativeLayout
         android:layout_width="match_parent"
+        android:id="@+id/relativelistsong"
         android:layout_height="match_parent">
         <androidx.cardview.widget.CardView
             android:layout_width="60dp"
@@ -75,5 +76,12 @@
             />
 
     </RelativeLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/relativelistsong"
+        android:layout_width="wrap_content"
+        android:id="@+id/ngayphathanhbaihat"
+        android:text="oke"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

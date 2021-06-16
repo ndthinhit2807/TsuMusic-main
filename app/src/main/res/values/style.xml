@@ -21,5 +21,9 @@
     <style name="ButtonStyle36" parent="ButtonStyleBase">
         <item name="android:padding">6dp</item>
     </style>
+    <style name="slidrActivityTHeme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
 
 </resources>

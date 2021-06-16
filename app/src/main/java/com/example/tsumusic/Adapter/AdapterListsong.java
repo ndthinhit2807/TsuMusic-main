@@ -19,6 +19,7 @@ import com.example.tsumusic.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHolder> {
     Context context;
@@ -27,7 +28,7 @@ public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHo
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txttenbaihat, txtcasi, txtluotnghe;
+        TextView txttenbaihat, txtcasi, txtluotnghe,txtngayphathanh;
         ImageView hinhbaihat;
 
         public ViewHolder(View itemview) {
@@ -68,6 +69,8 @@ public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHo
         Song song = mangbaihat.get(position);
         holder.txttenbaihat.setText(song.getTenbaihat());
         holder.txtcasi.setText(song.getTencasi());
+
+
 //        Tính lượt view hiện thị
         if (Integer.parseInt(song.getLuotnghe()) < 999) {
             holder.txtluotnghe.setText((song.getLuotnghe()));

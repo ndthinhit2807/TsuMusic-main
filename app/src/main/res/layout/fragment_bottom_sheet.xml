@@ -1,117 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/custom_backgroud"
-    android:layout_height="wrap_content">
-    <TextView
-        android:text="Thông Tin Bài Hát"
-        android:textStyle="bold"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/drawer_user_logo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="@id/drawer_user_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="contentDescription"
+        tools:src="@tools:sample/avatars" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/drawer_welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/welcome"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="?attr/colorControlNormal"
+        app:layout_constraintStart_toEndOf="@id/drawer_user_logo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/drawer_user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:requiresFadingEdge="horizontal"
+        android:singleLine="true"
+        android:text="@string/name"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/drawer_user_logo"
+        app:layout_constraintTop_toBottomOf="@id/drawer_welcome_text" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/songnameinfo"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="?selectableItemBackground"
+        android:drawableStart="@drawable/ic_info"
+        android:drawablePadding="16dp"
+        android:paddingStart="32dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="16dp"
+        android:text="@string/songinfo"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        app:drawableTint="?attr/colorControlNormal"
+        app:layout_constraintTop_toBottomOf="@id/drawer_user_name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/singerinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:drawableStart="@drawable/ic_artist"
+        android:drawablePadding="16dp"
+        android:paddingStart="32dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="16dp"
+        android:text="@string/singer_info"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        app:drawableTint="?attr/colorControlNormal"
+        app:layout_constraintTop_toBottomOf="@id/songnameinfo" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
         android:gravity="center"
-        android:background="@color/purple_200"
-        android:layout_height="30dp" />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:id="@+id/tenbaihatinfo"
-            android:text="Tên Bài Hát"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:layout_marginLeft="40dp"
-            android:id="@+id/textviewtenbaihatdangnghe"
-            android:layout_toRightOf="@+id/tenbaihatinfo"
-            android:text="Yêu Đơn Phương"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/tenbaihatinfo"
-            android:id="@+id/tennghesiinfo"
-            android:text="Tên Nghệ Sĩ"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:id="@+id/textviewtennghesihat"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/tenbaihatinfo"
-            android:layout_marginLeft="36dp"
-            android:layout_toRightOf="@+id/tennghesiinfo"
-            android:text="Only C"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/tennghesiinfo"
-            android:id="@+id/theloai"
-            android:text="Thể Loại"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:id="@+id/textviewtheloainhac"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/tennghesiinfo"
-            android:layout_marginLeft="59dp"
-            android:layout_toRightOf="@+id/theloai"
-            android:text="Pop"/>
-            <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/theloai"
-            android:id="@+id/ngayphathanh"
-            android:text="Ngày phát hành"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:id="@+id/textviewngayphathanhbaihat"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/theloai"
-            android:layout_marginLeft="12dp"
-            android:layout_toRightOf="@+id/ngayphathanh"
-            android:text="24-05-2021"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/ngayphathanh"
-            android:id="@+id/luotnghe"
-            android:text="Lượt nghe"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:id="@+id/textviewluotnghebaihat"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/ngayphathanh"
-            android:layout_marginLeft="49dp"
-            android:layout_toRightOf="@+id/luotnghe"
-            android:text="1M"/>
-    </RelativeLayout>
-
-
-</LinearLayout>
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="@string/group_name"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintTop_toBottomOf="@id/singerinfo" />
+</androidx.constraintlayout.widget.ConstraintLayout>

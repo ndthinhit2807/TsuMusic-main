@@ -1,30 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/custom_background_2"
+    android:orientation="vertical"
     tools:context=".Activity.SonginfoActivity">
-    <TextView
-        android:layout_width="match_parent"
-        android:text="Bài Hát"
-        android:textSize="20dp"
-        android:id="@+id/baihat"
-        android:gravity="center"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_below="@id/baihat"
-        android:layout_marginTop="10dp"
-        android:id="@+id/baihattitle"
-        android:text="Tên bài hát"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="Tên ca sĩ:"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/baihattitle"
-        android:id="@+id/casititle"
-        android:layout_height="wrap_content"/>
 
-</RelativeLayout>
+
+
+<TextView
+    android:layout_width="match_parent"
+    android:text="Thông tin bài hát"
+    android:layout_marginTop="20dp"
+    android:textSize="25sp"
+    android:gravity="center"
+    android:textStyle="bold"
+    android:layout_height="wrap_content"/>
+
+   <RelativeLayout
+       android:layout_width="wrap_content"
+       android:layout_marginTop="30dp"
+
+       android:layout_marginLeft="30dp"
+       android:layout_marginRight="30dp"
+       android:layout_height="wrap_content">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="16sp"
+           android:id="@+id/tenbaihatinfo"
+           android:text="Tên Bài Hát"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="16sp"
+           android:layout_marginLeft="39.5dp"
+           android:id="@+id/textviewtenbaihatdangnghe"
+           android:layout_toRightOf="@+id/tenbaihatinfo"
+           android:text="Yêu Đơn Phương"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="16sp"
+           android:layout_marginTop="20dp"
+           android:layout_below="@+id/tenbaihatinfo"
+           android:id="@+id/tennghesiinfo"
+           android:text="Tên Nghệ Sĩ"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+
+           android:textSize="16sp"
+           android:id="@+id/textviewtennghesihat"
+           android:layout_marginTop="20dp"
+           android:layout_below="@+id/tenbaihatinfo"
+           android:layout_marginLeft="36dp"
+           android:layout_toRightOf="@+id/tennghesiinfo"
+           android:text="Only C"/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+
+           android:textSize="16sp"
+           android:layout_marginTop="20dp"
+           android:layout_below="@+id/textviewtennghesihat"
+           android:id="@+id/ngayphathanh"
+           android:text="Ngày PH"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+
+           android:textSize="16sp"
+           android:id="@+id/textviewngayphathanhbaihat"
+           android:layout_marginTop="20dp"
+           android:layout_below="@+id/textviewtennghesihat"
+           android:layout_marginLeft="58.5dp"
+           android:layout_toRightOf="@+id/ngayphathanh"
+           android:text="24-05-2021"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+
+           android:textSize="16sp"
+           android:layout_marginTop="20dp"
+           android:layout_below="@+id/ngayphathanh"
+           android:id="@+id/luotnghe"
+           android:text="Lượt nghe"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+
+           android:textSize="16sp"
+           android:id="@+id/textviewluotnghebaihat"
+           android:layout_marginTop="20dp"
+           android:layout_below="@+id/ngayphathanh"
+           android:layout_marginLeft="49dp"
+           android:layout_toRightOf="@+id/luotnghe"
+           android:text="1M"/>
+   </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>

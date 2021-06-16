@@ -64,13 +64,13 @@ public class PlayMusicActivity extends AppCompatActivity {
     FragmentListsongplay fragment_listsongplay;
     FragmentMusicdisc fragment_musicdisc;
     private MediaPlayer mediaPlayer;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         setContentView(R.layout.activity_play_song);
+        onStop();
         GetDataIntent();
 //        for(Song a : mangbaihat)
 //        {
@@ -78,7 +78,14 @@ public class PlayMusicActivity extends AppCompatActivity {
 //        }
         Anhxa();
         eventClick();
+
     }
+
+    private void putinfo() {
+
+
+    }
+
     public void putStringValue(String key, String value) {
         SharedPreferences sharedPreferences = getSharedPreferences("passinfo", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -109,11 +116,7 @@ public class PlayMusicActivity extends AppCompatActivity {
 //                FragmentManager fm = getSupportFragmentManager();
 //                myDialog.show(fm, "FirstBottomSheetDialogFragment");
 ////
-//                Intent intent = new Intent(this, SonginfoActivity.class);
-//                putStringValue("tenbaihat", mangbaihat.get(positon).getTenbaihat());
-//                putStringValue("tencasi", mangbaihat.get(positon).getTencasi());
-//                startActivity(intent);
-//                onStop();
+
 //                return true;
 //            default:
 //                return super.onOptionsItemSelected(item);
@@ -183,8 +186,8 @@ public class PlayMusicActivity extends AppCompatActivity {
                         repeatnhac = false;
                         imgrandom.setImageResource(R.drawable.ic_shuffle_activate);
                         imgrepeat.setImageResource(R.drawable.ic_repeat);
-                        checkrandom=true;
-                    }else {
+                        checkrandom = true;
+                    } else {
                         imgrandom.setImageResource(R.drawable.ic_shuffle_activate);
                         checkrandom = true;
 
@@ -403,7 +406,7 @@ public class PlayMusicActivity extends AppCompatActivity {
 //                Animatoo.animateSlideDown(PlayMusicActivity.this);
 //            }
 //        });
-        ImageView imageView = (ImageView)findViewById(R.id.imageback);
+        ImageView imageView = (ImageView) findViewById(R.id.imageback);
         //set the ontouch listener
         imageView.setOnTouchListener(new View.OnTouchListener() {
 
@@ -456,6 +459,10 @@ public class PlayMusicActivity extends AppCompatActivity {
                                 = new FragmentBottomsheetdialog();
                         FragmentManager fm = getSupportFragmentManager();
                         myDialog.show(fm, "FirstBottomSheetDialogFragment");
+                        putStringValue("tenbaihat", mangbaihat.get(positon).getTenbaihat());
+                        putStringValue("tencasi", mangbaihat.get(positon).getTencasi());
+                        putStringValue("ngayphathanh", mangbaihat.get(positon).getNgayphathanh());
+                        putStringValue("luotnghe", mangbaihat.get(positon).getLuotnghe());
                         break;
                     }
                     case MotionEvent.ACTION_UP:
@@ -464,6 +471,7 @@ public class PlayMusicActivity extends AppCompatActivity {
                         //clear the overlay
                         view.getDrawable().clearColorFilter();
                         view.invalidate();
+
                         break;
                     }
                 }
@@ -471,6 +479,7 @@ public class PlayMusicActivity extends AppCompatActivity {
                 return false;
             }
         });
+
 
         adapternhac = new ViewpagerListsongplay(getSupportFragmentManager());
         fragment_listsongplay = new FragmentListsongplay();
@@ -516,7 +525,8 @@ public class PlayMusicActivity extends AppCompatActivity {
             Updatetime();
         }
     }
-//    vô hiệu hoá button back
+
+    //    vô hiệu hoá button back
     @Override
     public void onBackPressed() {
     }
@@ -537,6 +547,7 @@ public class PlayMusicActivity extends AppCompatActivity {
         sktime.setMax(mediaPlayer.getDuration());
         txttenbaihat.setText(mangbaihat.get(positon).getTenbaihat());
         txttencasi.setText(mangbaihat.get(positon).getTencasi());
+
     }
 
     //    Thời gian hiện tại đang phát của bài hát
