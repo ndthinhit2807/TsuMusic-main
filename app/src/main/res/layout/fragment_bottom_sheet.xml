@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:id="@+id/tenbaihat"
+            android:id="@+id/tenbaihatinfo"
             android:text="Tên Bài Hát"/>
         <TextView
             android:layout_width="wrap_content"
@@ -29,7 +29,7 @@
             android:textSize="15sp"
             android:layout_marginLeft="40dp"
             android:id="@+id/textviewtenbaihatdangnghe"
-            android:layout_toRightOf="@+id/tenbaihat"
+            android:layout_toRightOf="@+id/tenbaihatinfo"
             android:text="Yêu Đơn Phương"/>
         <TextView
             android:layout_width="wrap_content"
@@ -37,8 +37,8 @@
             android:textStyle="bold"
             android:textSize="15sp"
             android:layout_marginTop="5dp"
-            android:layout_below="@+id/tenbaihat"
-            android:id="@+id/tennghesi"
+            android:layout_below="@+id/tenbaihatinfo"
+            android:id="@+id/tennghesiinfo"
             android:text="Tên Nghệ Sĩ"/>
         <TextView
             android:layout_width="wrap_content"
@@ -47,9 +47,9 @@
             android:textSize="15sp"
             android:id="@+id/textviewtennghesihat"
             android:layout_marginTop="5dp"
-            android:layout_below="@+id/tenbaihat"
+            android:layout_below="@+id/tenbaihatinfo"
             android:layout_marginLeft="36dp"
-            android:layout_toRightOf="@+id/tennghesi"
+            android:layout_toRightOf="@+id/tennghesiinfo"
             android:text="Only C"/>
         <TextView
             android:layout_width="wrap_content"
@@ -57,7 +57,7 @@
             android:textStyle="bold"
             android:textSize="15sp"
             android:layout_marginTop="5dp"
-            android:layout_below="@+id/tennghesi"
+            android:layout_below="@+id/tennghesiinfo"
             android:id="@+id/theloai"
             android:text="Thể Loại"/>
         <TextView
@@ -67,7 +67,7 @@
             android:textSize="15sp"
             android:id="@+id/textviewtheloainhac"
             android:layout_marginTop="5dp"
-            android:layout_below="@+id/tennghesi"
+            android:layout_below="@+id/tennghesiinfo"
             android:layout_marginLeft="59dp"
             android:layout_toRightOf="@+id/theloai"
             android:text="Pop"/>

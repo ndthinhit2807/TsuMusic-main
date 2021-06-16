@@ -23,31 +23,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
-
         android:id="@+id/toolbarplaymusic"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize">
+        android:layout_height="?actionBarSize"/>
 
-
-
-    </androidx.appcompat.widget.Toolbar>
     <ImageView
         android:id="@+id/imageback"
+        style="@style/ButtonStyle36"
         android:layout_width="55dp"
         android:layout_height="?attr/actionBarSize"
         android:gravity="center"
-        android:layout_marginLeft="10dp"
-        style="@style/ButtonStyle36"
-        android:textAllCaps="true"
         android:src="@drawable/ic_down_arrow"
+        android:textAllCaps="true"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <androidx.viewpager.widget.ViewPager
 
         android:id="@+id/viewPagerplaymusic"
-        android:layout_width="380dp"
-        android:layout_height="380dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:layout_below="@+id/toolbarplaymusic"
         android:layout_centerInParent="true">
 
@@ -64,8 +59,8 @@
             android:id="@+id/relativelayoutsong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp">
             <!--Tên bài hát-->
             <TextView
                 android:id="@+id/textviewtenbaihatplay"

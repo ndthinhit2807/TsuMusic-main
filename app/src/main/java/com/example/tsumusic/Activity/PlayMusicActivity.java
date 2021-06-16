@@ -93,13 +93,17 @@ public class PlayMusicActivity extends AppCompatActivity {
                 return true;
             case R.id.thongtin:
 //                Toast.makeText(this, "Thông tin bài hát", Toast.LENGTH_SHORT).show();
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PlayMusicActivity.this);
-                bottomSheetDialog.setContentView(R.layout.fragment_bottom_sheet);
-                FragmentBottomsheetdialog myDialog
-                        = new FragmentBottomsheetdialog();
-
-                FragmentManager fm = getSupportFragmentManager();
-                myDialog.show(fm, "FirstBottomSheetDialogFragment");
+//                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PlayMusicActivity.this);
+//                bottomSheetDialog.setContentView(R.layout.fragment_bottom_sheet);
+//                FragmentBottomsheetdialog myDialog
+//                        = new FragmentBottomsheetdialog();
+//                FragmentManager fm = getSupportFragmentManager();
+//                myDialog.show(fm, "FirstBottomSheetDialogFragment");
+//                GetDataIntent();
+//                TextView textView1 =findViewById(R.id.textviewtenbaihatdangnghe);
+//                TextView textView2 =findViewById(R.id.textviewtennghesihat);
+//                textView1.setText(mangbaihat.get(positon).getTenbaihat());
+//                textView2.setText(mangbaihat.get(positon).getTencasi());
 //                Intent intent = new Intent(this,HomeActivity.class);
 //                startActivity(intent);
             default:
@@ -373,26 +377,6 @@ public class PlayMusicActivity extends AppCompatActivity {
         viewPagerplaymusic = findViewById(R.id.viewPagerplaymusic);
         txttenbaihat = findViewById(R.id.textviewtenbaihatplay);
         txttencasi = findViewById(R.id.textviewtencasihat);
-//        findViewById(R.id.imageviewbutionxemthemthongtin).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//
-//                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PlayMusicActivity.this);
-//                bottomSheetDialog.setContentView(R.layout.fragment_bottom_sheet);
-//                TextView txttenbaihat = bottomSheetDialog.findViewById(R.id.textviewtenbaihatdangnghe);
-//                TextView txtcasi = bottomSheetDialog.findViewById(R.id.textviewtennghesihat);
-//                TextView txttheloai = bottomSheetDialog.findViewById(R.id.textviewtheloainhac);
-//                TextView txtngayphathanh = bottomSheetDialog.findViewById(R.id.textviewngayphathanhbaihat);
-//                TextView txtluotnghe = bottomSheetDialog.findViewById(R.id.textviewluotnghebaihat);
-//
-//                FragmentBottomsheetdialog myDialog
-//                        = new FragmentBottomsheetdialog();
-//
-//                FragmentManager fm = getSupportFragmentManager();
-//                myDialog.show(fm, "FirstBottomSheetDialogFragment");
-//            }
-//        });
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);   //Ẩn title toolbar
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
