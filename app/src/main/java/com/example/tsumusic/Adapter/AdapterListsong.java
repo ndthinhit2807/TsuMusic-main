@@ -2,6 +2,7 @@ package com.example.tsumusic.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,8 @@ import java.util.ArrayList;
 public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHolder> {
     Context context;
     ArrayList<Song> mangbaihat;
+
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txttenbaihat, txtcasi, txtluotnghe;

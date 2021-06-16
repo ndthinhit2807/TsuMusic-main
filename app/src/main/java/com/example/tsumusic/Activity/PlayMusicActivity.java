@@ -23,16 +23,19 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.tsumusic.Adapter.ViewpagerListsongplay;
+import com.example.tsumusic.Fragment.FragmentBottomsheetdialog;
 import com.example.tsumusic.Fragment.FragmentListsongplay;
 import com.example.tsumusic.Fragment.FragmentMusicdisc;
 import com.example.tsumusic.Model.Song;
 import com.example.tsumusic.R;
 import com.example.tsumusic.Service.API_Service;
 import com.example.tsumusic.Service.Service_Data;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -89,7 +92,16 @@ public class PlayMusicActivity extends AppCompatActivity {
                 Toast.makeText(this, "Giới thiệu nghệ sĩ", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.thongtin:
-                Toast.makeText(this, "Thông tin bài hát", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Thông tin bài hát", Toast.LENGTH_SHORT).show();
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PlayMusicActivity.this);
+                bottomSheetDialog.setContentView(R.layout.fragment_bottom_sheet);
+                FragmentBottomsheetdialog myDialog
+                        = new FragmentBottomsheetdialog();
+
+                FragmentManager fm = getSupportFragmentManager();
+                myDialog.show(fm, "FirstBottomSheetDialogFragment");
+//                Intent intent = new Intent(this,HomeActivity.class);
+//                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -134,7 +146,7 @@ public class PlayMusicActivity extends AppCompatActivity {
                 if (repeatnhac == false) {
                     if (checkrandom == true) {
                         checkrandom = false;
-                        imgrepeat.setImageResource(R.drawable.ic_repeat);
+                        imgrepeat.setImageResource(R.drawable.ic_repeat_one);
                         imgrandom.setImageResource(R.drawable.ic_shuffle);
                         repeatnhac = true;
                     } else {
@@ -154,13 +166,14 @@ public class PlayMusicActivity extends AppCompatActivity {
                 if (checkrandom == false) {
                     if (repeatnhac == true) {
                         repeatnhac = false;
-                        imgrandom.setImageResource(R.drawable.ic_shuffle);
+                        imgrandom.setImageResource(R.drawable.ic_shuffle_activate);
                         imgrepeat.setImageResource(R.drawable.ic_repeat);
+                        checkrandom=true;
+                    }else {
+                        imgrandom.setImageResource(R.drawable.ic_shuffle_activate);
+                        checkrandom = true;
 
                     }
-                    imgrandom.setImageResource(R.drawable.ic_shuffle_activate);
-                    checkrandom = true;
-
                 } else {
                     imgrandom.setImageResource(R.drawable.ic_shuffle);
                     checkrandom = false;
@@ -300,7 +313,7 @@ public class PlayMusicActivity extends AppCompatActivity {
                         imgprev.setClickable(true);
                         imgnext.setClickable(true);
                     }
-                }, 3000);
+                }, 1000);
             }
         });
     }
@@ -360,26 +373,26 @@ public class PlayMusicActivity extends AppCompatActivity {
         viewPagerplaymusic = findViewById(R.id.viewPagerplaymusic);
         txttenbaihat = findViewById(R.id.textviewtenbaihatplay);
         txttencasi = findViewById(R.id.textviewtencasihat);
-       /* findViewById(R.id.imageviewbutionxemthemthongtin).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PlayMusicActivity.this);
-                bottomSheetDialog.setContentView(R.layout.fragment_bottom_sheet);
-                TextView txttenbaihat = bottomSheetDialog.findViewById(R.id.textviewtenbaihatdangnghe);
-                TextView txtcasi = bottomSheetDialog.findViewById(R.id.textviewtennghesihat);
-                TextView txttheloai = bottomSheetDialog.findViewById(R.id.textviewtheloainhac);
-                TextView txtngayphathanh = bottomSheetDialog.findViewById(R.id.textviewngayphathanhbaihat);
-                TextView txtluotnghe = bottomSheetDialog.findViewById(R.id.textviewluotnghebaihat);
-
-                Fragment_FirstBottomSheetDialog myDialog
-                        = new Fragment_FirstBottomSheetDialog();
-
-                FragmentManager fm = getSupportFragmentManager();
-                myDialog.show(fm, "FirstBottomSheetDialogFragment");
-            }
-        });*/
+//        findViewById(R.id.imageviewbutionxemthemthongtin).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//
+//                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PlayMusicActivity.this);
+//                bottomSheetDialog.setContentView(R.layout.fragment_bottom_sheet);
+//                TextView txttenbaihat = bottomSheetDialog.findViewById(R.id.textviewtenbaihatdangnghe);
+//                TextView txtcasi = bottomSheetDialog.findViewById(R.id.textviewtennghesihat);
+//                TextView txttheloai = bottomSheetDialog.findViewById(R.id.textviewtheloainhac);
+//                TextView txtngayphathanh = bottomSheetDialog.findViewById(R.id.textviewngayphathanhbaihat);
+//                TextView txtluotnghe = bottomSheetDialog.findViewById(R.id.textviewluotnghebaihat);
+//
+//                FragmentBottomsheetdialog myDialog
+//                        = new FragmentBottomsheetdialog();
+//
+//                FragmentManager fm = getSupportFragmentManager();
+//                myDialog.show(fm, "FirstBottomSheetDialogFragment");
+//            }
+//        });
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);   //Ẩn title toolbar
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -563,7 +576,7 @@ public class PlayMusicActivity extends AppCompatActivity {
                             imgprev.setClickable(true);
                             imgnext.setClickable(true);
                         }
-                    }, 3000);
+                    }, 1000);
                     nextnhac = false;
                     handler1.removeCallbacks(this);
                 } else {
