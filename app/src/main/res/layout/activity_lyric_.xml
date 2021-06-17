@@ -7,20 +7,36 @@
 
     android:background="@drawable/custom_background_2"
     tools:context=".Activity.LyricActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:text="@string/loibaihat"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:id="@+id/titleloibaihat"
+        android:layout_height="wrap_content"/>
+    <ScrollView
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/titleloibaihat"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="70dp"
+        android:layout_height="match_parent">
         <TextView
             android:id="@+id/textviewloibaihat"
             android:layout_width="match_parent"
-            android:text="loi bai hat"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
             android:layout_height="match_parent" />
+    </ScrollView>
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_alignParentRight="true"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="15dp"
         android:id="@+id/backbutton"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/ic_down_arrow" />
 </RelativeLayout>

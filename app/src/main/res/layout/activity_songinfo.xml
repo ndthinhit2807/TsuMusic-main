@@ -60,6 +60,7 @@
            android:layout_toRightOf="@+id/tennghesiinfo"
            android:text="Only C"/>
 
+
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -67,26 +68,6 @@
            android:textSize="16sp"
            android:layout_marginTop="20dp"
            android:layout_below="@+id/textviewtennghesihat"
-           android:id="@+id/ngayphathanh"
-           android:text="Ngày PH"/>
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-
-           android:textSize="16sp"
-           android:id="@+id/textviewngayphathanhbaihat"
-           android:layout_marginTop="20dp"
-           android:layout_below="@+id/textviewtennghesihat"
-           android:layout_marginLeft="58.5dp"
-           android:layout_toRightOf="@+id/ngayphathanh"
-           android:text="24-05-2021"/>
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-
-           android:textSize="16sp"
-           android:layout_marginTop="20dp"
-           android:layout_below="@+id/ngayphathanh"
            android:id="@+id/luotnghe"
            android:text="Lượt nghe"/>
        <TextView
@@ -96,15 +77,47 @@
            android:textSize="16sp"
            android:id="@+id/textviewluotnghebaihat"
            android:layout_marginTop="20dp"
-           android:layout_below="@+id/ngayphathanh"
+           android:layout_below="@+id/textviewtennghesihat"
            android:layout_marginLeft="49dp"
            android:layout_toRightOf="@+id/luotnghe"
            android:text="1M"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+
+           android:textSize="16sp"
+           android:layout_marginTop="20dp"
+           android:layout_below="@+id/textviewluotnghebaihat"
+           android:id="@+id/ngayphathanh"
+           android:text="Ngày PH"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+
+           android:textSize="16sp"
+           android:id="@+id/textviewngayphathanhbaihat"
+           android:layout_marginTop="20dp"
+           android:layout_below="@+id/textviewluotnghebaihat"
+           android:layout_marginLeft="58.5dp"
+           android:layout_toRightOf="@+id/ngayphathanh"
+           android:text="24-05-2021"/>
    </RelativeLayout>
-
-
-
-
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/backbuttonsonginfo"
+        style="@style/ButtonStyle36"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+       android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:src="@drawable/ic_down_arrow"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    </RelativeLayout>
 
 </LinearLayout>

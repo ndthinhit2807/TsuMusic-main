@@ -439,7 +439,6 @@ public class PlayMusicActivity extends AppCompatActivity {
                         //clear the overlay
                         view.getDrawable().clearColorFilter();
                         view.invalidate();
-
                         break;
                     }
                 }

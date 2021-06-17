@@ -15,7 +15,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.textview.MaterialTextView;
 
 public class FragmentBottomsheetdialog extends BottomSheetDialogFragment {
-    private MaterialTextView txtusername,txtsonginfo,txtsingerinfo;
+    private MaterialTextView txtsonginfo,txtsingerinfo;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -29,7 +29,6 @@ public class FragmentBottomsheetdialog extends BottomSheetDialogFragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        txtusername = view.findViewById(R.id.drawer_user_name);
         txtsonginfo = view.findViewById(R.id.songnameinfo);
         super.onViewCreated(view, savedInstanceState);
         txtsonginfo.setOnClickListener(new View.OnClickListener() {
