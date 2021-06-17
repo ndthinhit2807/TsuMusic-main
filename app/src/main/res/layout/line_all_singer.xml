@@ -26,6 +26,7 @@
     </androidx.cardview.widget.CardView>
     <TextView
         android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
         android:maxLines="2"
         android:textColor="#040303"
         android:gravity="left"
@@ -34,7 +35,7 @@
         android:layout_marginTop="2dp"
         android:layout_width="wrap_content"
         android:textSize="16sp"
-        android:text="OnlyC"
+        android:text="@string/singername"
         android:id="@+id/textviewtencasi"
         android:layout_height="wrap_content"/>
 

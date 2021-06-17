@@ -20,7 +20,7 @@
     android:layout_height="wrap_content"/>
 
    <RelativeLayout
-       android:layout_width="wrap_content"
+       android:layout_width="match_parent"
        android:layout_marginTop="30dp"
 
        android:layout_marginLeft="30dp"
@@ -33,7 +33,9 @@
            android:id="@+id/tenbaihatinfo"
            android:text="Tên Bài Hát"/>
        <TextView
-           android:layout_width="wrap_content"
+           android:layout_width="match_parent"
+           android:ellipsize="end"
+           android:maxLines="1"
            android:layout_height="wrap_content"
            android:textSize="16sp"
            android:layout_marginLeft="39.5dp"
@@ -51,7 +53,8 @@
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-
+           android:ellipsize="end"
+           android:maxLines="1"
            android:textSize="16sp"
            android:id="@+id/textviewtennghesihat"
            android:layout_marginTop="20dp"
@@ -73,7 +76,8 @@
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-
+           android:ellipsize="end"
+           android:maxLines="1"
            android:textSize="16sp"
            android:id="@+id/textviewluotnghebaihat"
            android:layout_marginTop="20dp"
@@ -93,7 +97,8 @@
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-
+           android:ellipsize="end"
+           android:maxLines="1"
            android:textSize="16sp"
            android:id="@+id/textviewngayphathanhbaihat"
            android:layout_marginTop="20dp"
@@ -108,16 +113,13 @@
     <ImageView
         android:id="@+id/backbuttonsonginfo"
         style="@style/ButtonStyle36"
-        android:layout_width="37dp"
-        android:layout_height="37dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:src="@drawable/ic_down_arrow"
-        android:textAllCaps="true"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        />
     </RelativeLayout>
 
 </LinearLayout>

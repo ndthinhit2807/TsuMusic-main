@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="60dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginBottom="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/relativelistsongupdate">
@@ -20,7 +21,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:elevation="7dp"
-            android:id="@+id/textviewindex"/>
+            android:scaleType="centerCrop"
+            android:id="@+id/textviewindex"
+            android:src="@drawable/ic_launcher_background"/>
         </androidx.cardview.widget.CardView>
         <com.google.android.material.textview.MaterialTextView
             android:textSize="16sp"
@@ -31,9 +34,10 @@
             android:ellipsize="end"
             android:maxWidth="250dp"
             android:singleLine="true"
+            android:fontFamily="@font/roboto_medium"
             android:id="@+id/textviewtencakhuc"
             android:textColor="@color/black"
-            android:text="Tên Ca Khúc"
+            android:text="@string/songname"
             android:layout_marginLeft="5dp"
             />
         <TextView
@@ -43,7 +47,8 @@
             android:layout_toRightOf="@id/cardviewbaihat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ca Sĩ"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/singername"
             android:id="@+id/textviewtencasi"
             android:layout_marginLeft="5dp"/>
         <ImageView
@@ -60,9 +65,9 @@
             android:layout_width="wrap_content"
             android:layout_below="@+id/textviewtencakhuc"
             android:layout_toRightOf= "@+id/imageviewlistsongluotnghe"
-            android:text="Lượt nghe"
+            android:text="@string/listens"
             android:layout_marginLeft="3dp"
-            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_regular"
             android:id="@+id/textviewlistsonghienthiluotnghe"
             android:layout_height="wrap_content"/>
         <ImageView
@@ -76,12 +81,4 @@
             />
 
     </RelativeLayout>
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/relativelistsong"
-        android:layout_width="wrap_content"
-        android:id="@+id/ngayphathanhbaihat"
-        android:text="oke"
-        android:layout_height="wrap_content"/>
-
-</RelativeLayout>
+   </RelativeLayout>

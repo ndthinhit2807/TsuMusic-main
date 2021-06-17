@@ -43,7 +43,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Tạo tài khoản"
+                android:text="@string/create_an_account"
+                android:fontFamily="@font/roboto_medium"
                 android:textColor="@color/colorBlack"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -52,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tạo mới một tài khoản"
-                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/roboto_medium"
                 android:textSize="18sp"
                 android:textStyle="normal" />
 
@@ -260,8 +261,9 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="30dp"
+                android:fontFamily="@font/roboto_medium"
                 android:background="@color/transparent"
-                android:text="tạo tài khoản"
+                android:text="@string/create_an_account"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -277,18 +279,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Đã có tài khoản ?"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="17sp" />
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/i_have_already_account"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textSingIn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    android:text="Đăng nhập ngay"
+                    android:text="@string/login_now"
+                    android:fontFamily="@font/roboto_medium"
                     android:textColor="@color/colorBlack"
-                    android:textSize="17sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
             </LinearLayout>

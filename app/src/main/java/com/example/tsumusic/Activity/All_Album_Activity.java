@@ -48,7 +48,6 @@ public class All_Album_Activity extends AppCompatActivity {
                 recyclerViewallalbum.setLayoutManager(new GridLayoutManager(All_Album_Activity.this,2));// chia danh sách album thành 2 cột
                 recyclerViewallalbum.setAdapter(adapter_allAlbum);
             }
-
             @Override
             public void onFailure(Call<List<Album>> call, Throwable t) {
 

@@ -41,16 +41,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Chào mừng đến với TsuMusic"
+                android:text="@string/welcome_to_tsumusic"
                 android:textColor="@color/colorBlack"
                 android:textSize="25sp"
+                android:fontFamily="@font/roboto_medium"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Đăng nhập để tiếp tục"
-                android:textColor="@color/colorBlack"
+                android:text="@string/sign_in_to_continue"
+                android:fontFamily="@font/roboto_medium"
                 android:textSize="18sp"
                 android:textStyle="normal" />
 
@@ -96,7 +97,6 @@
                             android:inputType="textPersonName"
                             android:paddingStart="10dp"
                             android:paddingEnd="10dp"
-                            android:textColor="@color/colorBlack"
                             android:textSize="18sp"
                             android:textStyle="bold" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -166,7 +166,7 @@
                 android:layout_marginEnd="30dp"
                 android:text="Quên mật khẩu"
                 android:textColor="@color/colorBlack"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
 
                 />
@@ -179,7 +179,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="30dp"
                 android:background="@color/transparent"
-                android:text="Đăng Nhập"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/signin"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -196,18 +197,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chưa có tài khoản ?"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="17sp" />
+                    android:text="@string/don_t_have_account"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textCreateAccount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    android:text="Đăng ký ngay"
+                    android:text="@string/signup_now"
+                    android:fontFamily="@font/roboto_medium"
                     android:textColor="@color/colorBlack"
-                    android:textSize="17sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
 

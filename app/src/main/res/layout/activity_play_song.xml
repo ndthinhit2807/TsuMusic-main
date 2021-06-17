@@ -12,25 +12,23 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
-        <com.google.android.material.textview.MaterialTextView
+        <TextView
             android:id="@+id/modern_nps_head"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="@font/utm_ericsson_capital"
+            android:fontFamily="@font/roboto_medium"
             android:gravity="center"
-            android:text="Now Playing"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+            android:text="@string/nowplaying"
+            android:textSize="25sp" />
 
         <ImageView
             android:id="@+id/imageback"
-            style="@style/ButtonStyle36"
+
             android:layout_width="37dp"
             android:layout_height="37dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:gravity="center"
             android:src="@drawable/ic_down_arrow"
             android:textAllCaps="true"
@@ -40,8 +38,8 @@
         <ImageView
             android:id="@+id/imageinfo"
             style="@style/ButtonStyle36"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:backgroundTint="@color/purple_primary"
@@ -64,9 +62,7 @@
         android:layout_width="330dp"
         android:layout_height="330dp"
         android:layout_below="@+id/relativeheader"
-        android:layout_centerInParent="true">
-
-    </androidx.viewpager.widget.ViewPager>
+        android:layout_centerInParent="true" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -86,9 +82,10 @@
                 android:id="@+id/textviewtenbaihatplay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
                 android:gravity="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:text="@string/songname"
+                android:textSize="16sp" />
             <!--Ca sĩ hát-->
             <TextView
                 android:id="@+id/textviewtencasihat"
@@ -96,7 +93,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textviewtenbaihatplay"
                 android:layout_centerInParent="true"
+                android:fontFamily="@font/roboto_regular"
                 android:gravity="center"
+                android:text="@string/singername"
                 android:textSize="16sp" />
 
         </RelativeLayout>
@@ -214,7 +213,6 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="0dp"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_up"
                 app:tint="@color/purple_primary" />
@@ -223,19 +221,11 @@
                 android:id="@+id/textLyrics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
                 android:gravity="center"
-                android:text="lyric"
-                android:textAllCaps="true"
-                android:textColor="@color/colorBlack"
-                android:textSize="15sp"
-                android:textStyle="bold"
+                android:text="@string/lyric"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent" />
-
-
         </LinearLayout>
-
-
     </LinearLayout>
-
-
 </RelativeLayout>

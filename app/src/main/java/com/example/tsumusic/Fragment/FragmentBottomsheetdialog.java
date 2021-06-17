@@ -38,6 +38,5 @@ public class FragmentBottomsheetdialog extends BottomSheetDialogFragment {
                 startActivity(intent);
             }
         });
-
     }
 }
