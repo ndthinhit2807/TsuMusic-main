@@ -30,7 +30,7 @@ public class SonginfoActivity extends AppCompatActivity {
         txttencasi = findViewById(R.id.textviewtennghesihat);
         txtluotnghe = findViewById(R.id.textviewluotnghebaihat);
         txtngayphathanh = findViewById(R.id.textviewngayphathanhbaihat);
-          SharedPreferences sharedPreferences = getSharedPreferences("passinfo", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("passinfo", Context.MODE_PRIVATE);
         txttenbaihat.setText(sharedPreferences.getString("tenbaihat", null));
         txttencasi.setText(sharedPreferences.getString("tencasi", null));
         txtluotnghe.setText(sharedPreferences.getString("luotnghe", null));

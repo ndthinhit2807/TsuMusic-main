@@ -1,5 +1,6 @@
 package com.example.tsumusic.Activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -38,6 +39,7 @@ import com.example.tsumusic.R;
 import com.example.tsumusic.Service.API_Service;
 import com.example.tsumusic.Service.Service_Data;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -59,6 +61,7 @@ public class PlayMusicActivity extends AppCompatActivity {
     boolean repeatnhac = false;
     boolean checkrandom = false;
     boolean nextnhac = false;
+    ImageView imglyrics, imginfosong, imgbackbutton;
     public static ArrayList<Song> mangbaihat = new ArrayList<>();
     public static ViewpagerListsongplay adapternhac;
     FragmentListsongplay fragment_listsongplay;
@@ -91,8 +94,8 @@ public class PlayMusicActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(key, value);
         editor.apply();
-    }
 
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -100,31 +103,6 @@ public class PlayMusicActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_activityplaymusic, menu);
         return true;
     }
-
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.nghesi:
-//                Toast.makeText(this, "Giới thiệu nghệ sĩ", Toast.LENGTH_SHORT).show();
-//                return true;
-//            case R.id.thongtin:
-//                Toast.makeText(this, "Thông tin bài hát", Toast.LENGTH_SHORT).show();
-//                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PlayMusicActivity.this);
-//                bottomSheetDialog.setContentView(R.layout.fragment_bottom_sheet);
-//                FragmentBottomsheetdialog myDialog
-//                        = new FragmentBottomsheetdialog();
-//                FragmentManager fm = getSupportFragmentManager();
-//                myDialog.show(fm, "FirstBottomSheetDialogFragment");
-////
-
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//
-//    }
-
-
     //    click
     private void eventClick() {
         final Handler handler = new Handler();
@@ -391,25 +369,13 @@ public class PlayMusicActivity extends AppCompatActivity {
         viewPagerplaymusic = findViewById(R.id.viewPagerplaymusic);
         txttenbaihat = findViewById(R.id.textviewtenbaihatplay);
         txttencasi = findViewById(R.id.textviewtencasihat);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setTitle(null);   //Ẩn title toolbar
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
+         imgbackbutton = (ImageView) findViewById(R.id.imageback);
+         imginfosong = (ImageView) findViewById(R.id.imageinfo);
+         imglyrics = (ImageView) findViewById(R.id.imageLyrics);
 
-//                if (mediaPlayer != null && mediaPlayer.isPlaying()) {
-//                    mediaPlayer.stop();
-//                    mangbaihat.clear();
-//                }
-//                finish();
-//                Animatoo.animateSlideDown(PlayMusicActivity.this);
-//            }
-//        });
-        ImageView imageView = (ImageView) findViewById(R.id.imageback);
+
         //set the ontouch listener
-        imageView.setOnTouchListener(new View.OnTouchListener() {
-
+        imgbackbutton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
@@ -441,8 +407,8 @@ public class PlayMusicActivity extends AppCompatActivity {
             }
         });
 
-        ImageView imageinfor = (ImageView) findViewById(R.id.imageinfo);
-        imageinfor.setOnTouchListener(new View.OnTouchListener() {
+
+        imginfosong.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -463,6 +429,41 @@ public class PlayMusicActivity extends AppCompatActivity {
                         putStringValue("tencasi", mangbaihat.get(positon).getTencasi());
                         putStringValue("ngayphathanh", mangbaihat.get(positon).getNgayphathanh());
                         putStringValue("luotnghe", mangbaihat.get(positon).getLuotnghe());
+
+
+                        break;
+                    }
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL: {
+                        ImageView view = (ImageView) v;
+                        //clear the overlay
+                        view.getDrawable().clearColorFilter();
+                        view.invalidate();
+
+                        break;
+                    }
+                }
+
+                return false;
+            }
+        });
+
+        imglyrics.setOnTouchListener(new View.OnTouchListener() {
+
+            @SuppressLint("ClickableViewAccessibility")
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN: {
+                        ImageView view = (ImageView) v;
+                        //overlay is black with transparency of 0x77 (119)
+                        view.getDrawable().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
+                        view.invalidate();
+
+                        Intent intent = new Intent(PlayMusicActivity.this,LyricActivity.class);
+                        startActivity(intent);
+                        putStringValue("loibaihat", mangbaihat.get(positon).getLoibaihat());
                         break;
                     }
                     case MotionEvent.ACTION_UP:

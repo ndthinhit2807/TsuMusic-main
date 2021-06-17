@@ -20,7 +20,7 @@ public class Song implements Parcelable {
     private Object mieuta;
     @SerializedName("LOIBAIHAT")
     @Expose
-    private Object loibaihat;
+    private String loibaihat;
     @SerializedName("URLBAIHAT")
     @Expose
     private String urlbaihat;
@@ -52,6 +52,7 @@ public class Song implements Parcelable {
     protected Song(Parcel in) {
         mabaihat = in.readString();
         tenbaihat = in.readString();
+        loibaihat = in.readString();
         urlbaihat = in.readString();
         luotnghe = in.readString();
         urlhinhbaihat = in.readString();
@@ -99,11 +100,11 @@ public class Song implements Parcelable {
         this.mieuta = mieuta;
     }
 
-    public Object getLoibaihat() {
+    public String getLoibaihat() {
         return loibaihat;
     }
 
-    public void setLoibaihat(Object loibaihat) {
+    public void setLoibaihat(String loibaihat) {
         this.loibaihat = loibaihat;
     }
 
@@ -188,6 +189,7 @@ public class Song implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mabaihat);
         dest.writeString(tenbaihat);
+        dest.writeString(loibaihat);
         dest.writeString(urlbaihat);
         dest.writeString(luotnghe);
         dest.writeString(urlhinhbaihat);
