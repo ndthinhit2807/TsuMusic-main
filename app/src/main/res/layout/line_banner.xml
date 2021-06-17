@@ -8,7 +8,7 @@
             android:id="@+id/imgbackgroudbanner"
             android:layout_width="match_parent"
             android:layout_height="190dp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
             android:elevation="10dp"
             android:src="@drawable/custom_background_2"/>
 

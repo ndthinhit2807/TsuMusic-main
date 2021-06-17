@@ -43,6 +43,7 @@
                 app:cardCornerRadius="10dp">
                 <ImageView
                     android:layout_gravity="center"
+                    android:scaleType="fitXY"
                     android:id="@+id/imgviewlistsong"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>

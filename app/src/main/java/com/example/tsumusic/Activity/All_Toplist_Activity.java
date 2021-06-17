@@ -42,7 +42,6 @@ public class All_Toplist_Activity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Danh sách top 100");
-        toolbar.setTitleTextColor(getResources().getColor(R.color.purple_200));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

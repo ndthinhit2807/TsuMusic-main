@@ -13,10 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto_medium"
         android:gravity="center"
-        android:text="Thông tin bài hát"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:text="@string/songinfo"
+        android:textAllCaps="true"
+        android:textSize="25sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -123,6 +124,7 @@
             style="@style/ButtonStyle36"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:gravity="center"

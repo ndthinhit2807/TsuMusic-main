@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.tsumusic.Model.Song;
 import com.example.tsumusic.R;
 import com.google.android.material.textview.MaterialTextView;
@@ -58,6 +59,7 @@ public class SonginfoActivity extends AppCompatActivity {
                         view.getDrawable().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         view.invalidate();
                         onBackPressed();
+                        Animatoo.animateSlideDown(SonginfoActivity.this);
                         break;
                     }
                     case MotionEvent.ACTION_UP:

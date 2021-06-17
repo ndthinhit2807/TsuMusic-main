@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.tsumusic.R;
 
 public class LyricActivity extends AppCompatActivity {
@@ -42,6 +43,7 @@ public class LyricActivity extends AppCompatActivity {
                         view.getDrawable().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         view.invalidate();
                         onBackPressed();
+                        Animatoo.animateSlideDown(LyricActivity.this);
                         break;
                     }
                     case MotionEvent.ACTION_UP:

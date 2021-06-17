@@ -27,10 +27,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="5dp"
         android:textStyle="bold"
-        android:fontFamily="@font/roboto_regular"
+        android:fontFamily="@font/roboto_medium"
         android:id="@+id/textviewsearchdong1"
         android:textSize="16sp"
-        android:textColor="#E4CECE"
         android:singleLine="true"
         android:maxWidth="250dp"/>
     <TextView
@@ -43,7 +42,6 @@
         android:layout_below="@+id/textviewsearchdong1"
         android:textSize="16sp"
         android:fontFamily="@font/roboto_regular"
-        android:textColor="#E4CECE"
         android:singleLine="true"
         android:maxWidth="250dp"/>
     <ImageView

@@ -429,8 +429,6 @@ public class PlayMusicActivity extends AppCompatActivity {
                         putStringValue("tencasi", mangbaihat.get(positon).getTencasi());
                         putStringValue("ngayphathanh", mangbaihat.get(positon).getNgayphathanh());
                         putStringValue("luotnghe", mangbaihat.get(positon).getLuotnghe());
-
-
                         break;
                     }
                     case MotionEvent.ACTION_UP:
@@ -459,10 +457,10 @@ public class PlayMusicActivity extends AppCompatActivity {
                         //overlay is black with transparency of 0x77 (119)
                         view.getDrawable().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         view.invalidate();
-
                         Intent intent = new Intent(PlayMusicActivity.this,LyricActivity.class);
                         startActivity(intent);
                         putStringValue("loibaihat", mangbaihat.get(positon).getLoibaihat());
+                        Animatoo.animateSlideUp(PlayMusicActivity.this);
                         break;
                     }
                     case MotionEvent.ACTION_UP:

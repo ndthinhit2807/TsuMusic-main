@@ -12,9 +12,9 @@
         android:roundIcon="@mipmap/logo_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TsuMusic">
-        <activity android:name=".Activity.SonginfoActivity"
-            android:screenOrientation="portrait"
-            />
+        <activity
+            android:name=".Activity.SonginfoActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.AppinformationActivity"
             android:screenOrientation="portrait" />
@@ -65,7 +65,6 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
