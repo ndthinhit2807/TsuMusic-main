@@ -21,20 +21,19 @@
                 android:layout_width="185dp"
                 android:layout_height="185dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_background"/>
+                android:src="@drawable/custom_background_2"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
     <TextView
         android:ellipsize="end"
         android:maxLines="2"
-        android:textColor="#040303"
-        android:gravity="left"
         android:maxWidth="185dp"
         android:layout_marginTop="2dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginRight="15sp"
         android:layout_width="wrap_content"
         android:textSize="16sp"
-        android:text="Tên Ablum"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/genrename"
         android:id="@+id/textviewtentheloai"
         android:layout_height="wrap_content"/>
 </LinearLayout>

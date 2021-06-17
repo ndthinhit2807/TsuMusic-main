@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_background" />
+                android:src="@drawable/custom_background_2" />
         </androidx.cardview.widget.CardView>
         <TextView
             android:textSize="13dp"
@@ -40,6 +40,7 @@
             android:layout_toRightOf="@id/cardviewtoplist"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
+            android:fontFamily="@font/roboto_regular"
             android:id="@+id/txtnametoplist"
             android:layout_marginRight="50dp"
             android:layout_marginBottom="5dp"

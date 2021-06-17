@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.circularreveal.CircularRevealRelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<com.google.android.material.circularreveal.CircularRevealRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/custom_backgroud"
-    >
+    android:background="@drawable/custom_backgroud">
+
     <RelativeLayout
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
         android:id="@+id/relativesinger"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="8dp">
+
         <TextView
             android:id="@+id/txttitletcasi"
-            android:text="NGHỆ SĨ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="25dp"
             android:layout_centerVertical="true"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:text="@string/artist"
+            android:textSize="25sp"
+            android:textStyle="bold" />
     </RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginBottom="35dp"
-        android:layout_marginLeft="15dp"
-        android:layout_below="@id/relativesinger"
         android:id="@+id/recycleviewsinger"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativesinger"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="35dp"/>
 </com.google.android.material.circularreveal.CircularRevealRelativeLayout>

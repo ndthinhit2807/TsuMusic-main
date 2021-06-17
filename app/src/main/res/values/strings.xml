@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">TsuMusic</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="top100">Top 100</string>
     <string name="More"><u>Xem thêm ></u></string>
     <string name="now_playing"><b>Now Playing</b></string>
     <string name="module_common_welcome_start">Bắt Đầu</string>
+    <string name="song_suggesttion">Gợi ý bài hát</string>
     <string name="version">Phiên bản 1.0</string>
-    <string name="don_t_have_an_account_sing_up_now">Don\'t have an account sing up now</string>
     <string name="lyric">Lyric</string>
     <string name="name">Họ tên</string>
     <string name="loibaihat">Lời Bài Hát</string>
@@ -14,20 +15,31 @@
     <string name="songinfo">Thông tin bài hát</string>
     <string name="user_name">Tên đăng nhập</string>
     <string name="signup_now">Đăng ký ngay</string>
+    <string name="artist">Nghệ sĩ</string>
     <string name="singername">Tên ca sĩ</string>
+    <string name="nosongdata">Không có dữ liệu bài hát</string>
+    <string name="nolyricsong">Bài hát hiện chưa có lời</string>
+    <string name="playlistsname">Tên danh sách</string>
+    <string name="playlists">Danh sách phát</string>
     <string name="welcome_tsumusic">Welcome TsuMusic</string>
     <string name="welcome_to_tsumusic">Chào mừng đến với Tsumusic</string>
     <string name="welcome">Welcome </string>
-    <string name="singer_info">Xem nghệ sĩ</string>
+    <string name="equalizer">Equalizer</string>
     <string name="listens">Lượt nghe</string>
     <string name="songname">Tên bài hát</string>
     <string name="sign_in_to_continue">Đăng nhập để tiếp tục</string>
+    <string name="submit">Xác nhận</string>
+    <string name="song">Bài hát</string>
+    <string name="album">Album</string>
     <string name="you_email_com">Email của bạn</string>
     <string name="required">Yêu cầu*</string>
     <string name="create_an_account">Tạo tài khoản</string>
     <string name="password">Mật khẩu</string>
+    <string name="album_name">Tên album</string>
     <string name="oldpassword">Mật khẩu cũ</string>
     <string name="newpassword">Mật khẩu mới</string>
+    <string name="genre">Thể loại</string>
+    <string name="genrename">Tên thể loại</string>
     <string name="confirmnewpassword">Xác nhận mật khẩu mới</string>
     <string name="introduce">Ứng dụng nghe nhạc mọi lúc, mọi nơi chỉ cần có kết nối internet. Bạn có thể lắng nghe những bài hát, những album, hoặc những playlist hay nhất của nhạc sĩ bạn yêu thích.</string>
     <string name="don_t_have_account">Chưa có tài khoản?</string>

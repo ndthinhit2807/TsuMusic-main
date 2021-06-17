@@ -10,14 +10,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/relativegenre">
         <TextView
-            android:text="THỂ LOẠI"
-            android:gravity="left"
-            android:textSize="25dp"
+            android:text="@string/genre"
+            android:textSize="25sp"
+            android:textAllCaps="true"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textColor="@color/black"/>
+            android:fontFamily="@font/roboto_medium"/>
         <TextView
             android:textSize="16sp"
             android:text="@string/More"
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:textColor="@color/colorBlack"/>
+            android:fontFamily="@font/roboto_medium"/>
     </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginLeft="15dp"

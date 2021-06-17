@@ -1,74 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativesongsuggestionsclick"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginBottom="10dp"
-    android:id="@+id/relativesongsuggestionsclick">
+    android:layout_marginBottom="10dp">
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewbaihatnghenhieunhat"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginRight="3dp"
         android:layout_marginBottom="0dp"
-        android:id="@+id/cardviewbaihatnghenhieunhat"
         app:cardCornerRadius="5dp">
+
         <ImageView
-            android:layout_width="match_parent"
+            android:id="@+id/imageviewbaihatnghenhieunhat"
+            android:layout_width="60dp"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:id="@+id/imageviewbaihatnghenhieunhat"
-            android:src="@drawable/ic_launcher_background"/>
+            android:src="@drawable/custom_background_2" />
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:text="Tên Bài Hát"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:textColor="#000000"
-        android:textSize="16sp"
         android:id="@+id/textviewtenbaihatnghenhieunhat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
-        android:maxWidth="250dp"
         android:layout_toRightOf="@+id/cardviewbaihatnghenhieunhat"
-        android:layout_height="wrap_content"/>
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:textStyle="bold"
+        android:maxWidth="250dp"
+        android:maxLines="1"
+        android:text="@string/songname"
+        android:textSize="16sp" />
+
     <TextView
-        android:singleLine="true"
-        android:layout_width="wrap_content"
-        android:layout_toRightOf= "@+id/cardviewbaihatnghenhieunhat"
-        android:layout_below="@+id/textviewtenbaihatnghenhieunhat"
-        android:text="Tên Ca Sĩ"
-        android:layout_marginLeft="5dp"
-        android:textColor="#322929"
-        android:textSize="16sp"
         android:id="@+id/textviewtencasibaihatnghenhieunhat"
-        android:layout_height="wrap_content"/>
-        <ImageView
-            android:layout_width="11dp"
-            android:src="@drawable/ic_headphone"
-            android:layout_toRightOf= "@+id/textviewtencasibaihatnghenhieunhat"
-            android:layout_below="@+id/textviewtenbaihatnghenhieunhat"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/imageviewsongsugesstionluotnghe"
-            android:layout_height="11dp"/>
-        <TextView
-        android:singleLine="true"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/textviewtenbaihatnghenhieunhat"
-        android:layout_toRightOf= "@+id/imageviewsongsugesstionluotnghe"
-        android:text="Lượt nghe"
-        android:layout_marginLeft="3dp"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/cardviewbaihatnghenhieunhat"
+        android:fontFamily="@font/roboto_regular"
+        android:singleLine="true"
+        android:text="@string/singername"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/imageviewsongsugesstionluotnghe"
+        android:layout_width="11dp"
+        android:layout_height="11dp"
+        android:layout_below="@+id/textviewtenbaihatnghenhieunhat"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@+id/textviewtencasibaihatnghenhieunhat"
+        android:src="@drawable/ic_headphone" />
+
+    <TextView
         android:id="@+id/textviewsongsuggestionhienthiluotnghe"
-        android:layout_height="wrap_content"/>
-         <ImageView
         android:layout_width="wrap_content"
-        android:src="@drawable/ic_vertical_dots"
-        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textviewtenbaihatnghenhieunhat"
+        android:layout_marginLeft="3dp"
+        android:layout_toRightOf="@+id/imageviewsongsugesstionluotnghe"
+        android:fontFamily="@font/roboto_regular"
+        android:singleLine="true"
+        android:text="@string/listens"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_height="wrap_content"/>
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_vertical_dots" />
 
 </RelativeLayout>

@@ -11,13 +11,12 @@
 
         android:id="@+id/toolbarappinformation"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize">
-    </androidx.appcompat.widget.Toolbar>
+        android:layout_height="?actionBarSize"></androidx.appcompat.widget.Toolbar>
 
     <RelativeLayout
+        android:id="@+id/relavtivelogoapp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/relavtivelogoapp"
         android:layout_below="@+id/toolbarappinformation"
         android:layout_marginTop="40dp">
 
@@ -33,38 +32,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/logoapp"
-            android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/utm_sharnay"
             android:text="@string/app_name"
             android:textSize="46dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/appname"
             android:layout_centerHorizontal="true"
-
+            android:fontFamily="@font/roboto_medium"
             android:text="@string/version"
-            android:textSize="16dp"
-            android:textStyle="bold">
-
-        </TextView>
+            android:textSize="16sp"/>
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/relavtivelogoapp"
-        android:layout_marginTop="40dp"
-        android:layout_height="wrap_content">
+        android:layout_marginTop="40dp">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/introduce"
             android:textAlignment="center"
-            android:textSize="16sp"
-            android:text="@string/introduce"/>
+            android:textSize="16sp" />
 
     </RelativeLayout>
 

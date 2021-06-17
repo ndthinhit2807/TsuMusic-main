@@ -4,47 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-
-
     android:orientation="vertical"
     android:scrollbars="none">
 
     <androidx.appcompat.widget.LinearLayoutCompat
-
         android:id="@+id/main_linearlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/custom_backgroud"
         android:orientation="vertical">
 
-
         <fragment
             android:id="@+id/fragment_banner"
             android:name="com.example.tsumusic.Fragment.FragmentBanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp">
-
-        </fragment>
+            android:layout_marginTop="0dp" />
 
         <fragment
-
             android:id="@+id/fragment_toplist"
             android:name="com.example.tsumusic.Fragment.FragmentToplist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
-
-        </fragment>
+            android:layout_marginTop="8dp" />
 
         <fragment
             android:id="@+id/genre_fragment"
             android:name="com.example.tsumusic.Fragment.FragmentGenre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp">
-
-        </fragment>
+            android:layout_marginTop="3dp" />
 
 
         <fragment
@@ -52,18 +41,15 @@
             android:name="com.example.tsumusic.Fragment.FragmentAlbumhot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp">
+            android:layout_marginTop="3dp" />
 
-        </fragment>
 
         <fragment
             android:id="@+id/fragment_songsuggestions"
             android:name="com.example.tsumusic.Fragment.FragmentSongsuggestions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp">
-
-        </fragment>
+            android:layout_marginTop="3dp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </ScrollView>

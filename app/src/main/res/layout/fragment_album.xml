@@ -12,13 +12,13 @@
 
         <TextView
             android:id="@+id/txttitletoplist"
-            android:text="ALBUM "
+            android:text="@string/album"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="left"
+           android:textAllCaps="true"
+            android:fontFamily="@font/roboto_medium"
             android:layout_centerVertical="true"
-            android:textSize="25dp"
-            android:textColor="@color/black"
+            android:textSize="25sp"
             android:textStyle="bold">
 
         </TextView>
@@ -30,7 +30,6 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="18dp"
             android:text="@string/More"
-            android:textColor="@color/colorBlack"
             android:textSize="15sp" />
     </RelativeLayout>
 

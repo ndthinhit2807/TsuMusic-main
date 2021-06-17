@@ -31,7 +31,7 @@
         android:id="@+id/recyclesearch"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="15dp"
         android:layout_below="@+id/appbarlayoutsearchbaihat"
         android:layout_height="match_parent">
@@ -40,9 +40,9 @@
     <TextView
         android:layout_width="match_parent"
         android:textSize="20sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/roboto_medium"
         android:id="@+id/textviewkhongcodulieu"
-        android:text="Không Có Dữ Liệu Bài Hát"
+        android:text="@string/nosongdata"
         android:gravity="center"
         android:layout_height="match_parent"/>
 

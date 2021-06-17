@@ -18,6 +18,8 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
+            android:textStyle="bold"
+            android:textAllCaps="true"
             android:text="@string/nowplaying"
             android:textSize="25sp" />
 

@@ -9,117 +9,124 @@
     tools:context=".Activity.SonginfoActivity">
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Thông tin bài hát"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-<TextView
-    android:layout_width="match_parent"
-    android:text="Thông tin bài hát"
-    android:layout_marginTop="20dp"
-    android:textSize="25sp"
-    android:gravity="center"
-    android:textStyle="bold"
-    android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center">
 
-   <RelativeLayout
-       android:layout_width="match_parent"
-       android:layout_marginTop="30dp"
+        <TextView
+            android:id="@+id/tenbaihatinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/songname"
+            android:textSize="16sp" />
 
-       android:layout_marginLeft="30dp"
-       android:layout_marginRight="30dp"
-       android:layout_height="wrap_content">
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textSize="16sp"
-           android:id="@+id/tenbaihatinfo"
-           android:text="Tên Bài Hát"/>
-       <TextView
-           android:layout_width="match_parent"
-           android:ellipsize="end"
-           android:maxLines="1"
-           android:layout_height="wrap_content"
-           android:textSize="16sp"
-           android:layout_marginLeft="39.5dp"
-           android:id="@+id/textviewtenbaihatdangnghe"
-           android:layout_toRightOf="@+id/tenbaihatinfo"
-           android:text="Yêu Đơn Phương"/>
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textSize="16sp"
-           android:layout_marginTop="20dp"
-           android:layout_below="@+id/tenbaihatinfo"
-           android:id="@+id/tennghesiinfo"
-           android:text="Tên Nghệ Sĩ"/>
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:ellipsize="end"
-           android:maxLines="1"
-           android:textSize="16sp"
-           android:id="@+id/textviewtennghesihat"
-           android:layout_marginTop="20dp"
-           android:layout_below="@+id/tenbaihatinfo"
-           android:layout_marginLeft="36dp"
-           android:layout_toRightOf="@+id/tennghesiinfo"
-           android:text="Only C"/>
+        <TextView
+            android:id="@+id/textviewtenbaihatdangnghe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="39.5dp"
+            android:layout_toRightOf="@+id/tenbaihatinfo"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Yêu Đơn Phương"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tennghesiinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tenbaihatinfo"
+            android:layout_marginTop="20dp"
+            android:text="Tên Nghệ Sĩ"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textviewtennghesihat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tenbaihatinfo"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/tennghesiinfo"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Only C"
+            android:textSize="16sp" />
 
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/luotnghe"
+            android:layout_width="wrap_content"
 
-           android:textSize="16sp"
-           android:layout_marginTop="20dp"
-           android:layout_below="@+id/textviewtennghesihat"
-           android:id="@+id/luotnghe"
-           android:text="Lượt nghe"/>
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:ellipsize="end"
-           android:maxLines="1"
-           android:textSize="16sp"
-           android:id="@+id/textviewluotnghebaihat"
-           android:layout_marginTop="20dp"
-           android:layout_below="@+id/textviewtennghesihat"
-           android:layout_marginLeft="49dp"
-           android:layout_toRightOf="@+id/luotnghe"
-           android:text="1M"/>
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewtennghesihat"
+            android:layout_marginTop="20dp"
+            android:text="Lượt nghe"
+            android:textSize="16sp" />
 
-           android:textSize="16sp"
-           android:layout_marginTop="20dp"
-           android:layout_below="@+id/textviewluotnghebaihat"
-           android:id="@+id/ngayphathanh"
-           android:text="Ngày PH"/>
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:ellipsize="end"
-           android:maxLines="1"
-           android:textSize="16sp"
-           android:id="@+id/textviewngayphathanhbaihat"
-           android:layout_marginTop="20dp"
-           android:layout_below="@+id/textviewluotnghebaihat"
-           android:layout_marginLeft="58.5dp"
-           android:layout_toRightOf="@+id/ngayphathanh"
-           android:text="24-05-2021"/>
-   </RelativeLayout>
+        <TextView
+            android:id="@+id/textviewluotnghebaihat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewtennghesihat"
+            android:layout_marginLeft="49dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/luotnghe"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="1M"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/ngayphathanh"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewluotnghebaihat"
+            android:layout_marginTop="20dp"
+            android:text="Ngày PH"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textviewngayphathanhbaihat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewluotnghebaihat"
+            android:layout_marginLeft="58.5dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/ngayphathanh"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="24-05-2021"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/backbuttonsonginfo"
-        style="@style/ButtonStyle36"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-       android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:src="@drawable/ic_down_arrow"
-        />
+
+        <ImageView
+            android:id="@+id/backbuttonsonginfo"
+            style="@style/ButtonStyle36"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:src="@drawable/ic_down_arrow" />
     </RelativeLayout>
 
 </LinearLayout>

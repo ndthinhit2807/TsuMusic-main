@@ -11,13 +11,13 @@
         android:layout_marginLeft="15dp">
         <TextView
             android:id="@+id/txttitletoplist"
-            android:text="GỢI Ý BÀI HÁT "
+            android:text="@string/song_suggesttion"
+            android:textAllCaps="true"
+            android:fontFamily="@font/roboto_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="left"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:layout_marginBottom="8dp"
-            android:textColor="@color/black"
             android:textStyle="bold"/>
     </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView

@@ -22,6 +22,7 @@
             android:layout_below="@+id/imageviewbg01"
             android:layout_marginTop="-30dp"
             android:gravity="center"
+            android:fontFamily="@font/roboto_medium"
             android:text="Những ca sĩ được yêu thích nhất"
             android:textColor="#ce102c"
             android:textSize="20dp" />

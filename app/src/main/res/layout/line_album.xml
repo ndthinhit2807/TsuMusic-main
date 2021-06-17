@@ -21,28 +21,28 @@
             android:id="@+id/imageviewhinhalbum"
             android:scaleType="centerCrop"
             android:layout_gravity="center"
-            android:src="@drawable/ic_launcher_background"/>
+            android:src="@drawable/custom_background_2"/>
 
         </androidx.cardview.widget.CardView>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textviewtenalbum"
-            android:text="Dem Ngay Xa Em"
+            android:text="@string/album_name"
             android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto_medium"
             android:textSize="16sp"
             android:maxWidth="150dp"
             android:maxLines="2"
-            android:textColor="@color/black"
             android:ellipsize="end"/>
         <TextView
             android:id="@+id/texttencasialbum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:text="OnlyC"
+            android:text="@string/singername"
             android:maxLines="2"
-            android:textColor="#232323"
+            android:fontFamily="@font/roboto_regular"
             android:maxWidth="150dp"
             android:ellipsize="end">
         </TextView>
