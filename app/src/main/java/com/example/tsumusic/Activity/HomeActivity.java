@@ -29,7 +29,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //Hiện dialog chờ cho app load dữ liệu xong
         final LoadingDialog loadingDialog = new LoadingDialog(HomeActivity.this);
-        mapping();
         loadingDialog.StartLoadingDialog();
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -38,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
                 loadingDialog.dismissDialog();
             }
         }, 3000);
-        mapping();
+        anhxa();
         init();
         setupTabIcons();
     }
@@ -57,10 +56,12 @@ public class HomeActivity extends AppCompatActivity {
         adapter_viewPager.addFragment(new FragmentInformation(), "Cá Nhân");
         viewPager.setAdapter(adapter_viewPager);
         tabLayout.setupWithViewPager(viewPager);
+//        Load trước 3 tab viewpager khi khởi động,
+//        set error: nếu không set trước khi bấm tabview pager liên tục sẽ bị crash
         viewPager.setOffscreenPageLimit(3);
     }
 
-    //   Set màu cho TabLayout + ViewPage
+    //       Set màu cho TabLayout + ViewPage
     private void setupTabIcons() { //set màu icon
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_home);
         tabLayout.getTabAt(0).getIcon().setColorFilter(Color.parseColor("#FF6347"), PorterDuff.Mode.SRC_IN);
@@ -85,12 +86,12 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
             }
         });
     }
+
     //Ánh xạ dữ liệu từ viewpager và tablayout
-    private void mapping() {
+    private void anhxa() {
         tabLayout = findViewById(R.id.mainTabLayout);
         viewPager = findViewById(R.id.mainViewPager);
     }

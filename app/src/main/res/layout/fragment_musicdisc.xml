@@ -11,5 +11,5 @@
         android:layout_centerInParent="true"
         android:src="@drawable/default_logo_disc"
         app:civ_border_color="#FFFFFF"
-        app:civ_border_width="2dp" />
+        app:civ_border_width="1dp" />
 </RelativeLayout>

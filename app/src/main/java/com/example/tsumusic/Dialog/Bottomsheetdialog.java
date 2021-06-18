@@ -13,11 +13,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentManager;
 
-import com.blogspot.atifsoftwares.animatoolib.Animatoo;
-import com.example.tsumusic.Activity.PlayMusicActivity;
-import com.example.tsumusic.Activity.SonginfoActivity;
 import com.example.tsumusic.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -77,12 +73,15 @@ public class Bottomsheetdialog extends BottomSheetDialogFragment {
                 View view = View.inflate(getActivity(),R.layout.dialog_bottomsheet_songinfo,null);
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getActivity());
                 bottomSheetDialog.setContentView(view);
-                bottomSheetDialog.show();
+                if (bottomSheetDialog.isShowing()){
+                    bottomSheetDialog.dismiss();
+                } else {
+                    bottomSheetDialog.show();
+                }
                 TextView txttenbai =(TextView) view.findViewById(R.id.textviewtenbaihatdangnghe);
                 TextView txtcasi =(TextView) view.findViewById(R.id.textviewtennghesihat);
                 TextView txtluotnghe =(TextView) view.findViewById(R.id.textviewluotnghebaihat);
                 TextView txtngayphathanh =(TextView) view.findViewById(R.id.textviewngayphathanhbaihat);
-                bottomSheetDialog.dismiss();
                 SharedPreferences sharedPreferences = getActivity().getSharedPreferences("passinfo", Context.MODE_PRIVATE);
                 txttenbai.setText(sharedPreferences.getString("tenbaihat", null));
                 txtcasi.setText(sharedPreferences.getString("tencasi", null));

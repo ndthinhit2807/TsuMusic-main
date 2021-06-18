@@ -419,7 +419,12 @@ public class PlayMusicActivity extends AppCompatActivity {
                         Bottomsheetdialog myDialog
                                 = new Bottomsheetdialog();
                         FragmentManager fm = getSupportFragmentManager();
-                        myDialog.show(fm, "FirstBottomSheetDialogFragment");
+                        if (bottomSheetDialog.isShowing()){
+                            myDialog.dismiss();
+                        } else {
+                            myDialog.show(fm, "FirstBottomSheetDialogFragment");
+                        }
+//                        myDialog.show(fm, "FirstBottomSheetDialogFragment");
                         putStringValue("tenbaihat", mangbaihat.get(positon).getTenbaihat());
                         putStringValue("tencasi", mangbaihat.get(positon).getTencasi());
                         putStringValue("ngayphathanh", mangbaihat.get(positon).getNgayphathanh());
