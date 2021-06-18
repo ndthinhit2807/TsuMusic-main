@@ -73,11 +73,11 @@ public class Bottomsheetdialog extends BottomSheetDialogFragment {
                 View view = View.inflate(getActivity(),R.layout.dialog_bottomsheet_songinfo,null);
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getActivity());
                 bottomSheetDialog.setContentView(view);
-                if (bottomSheetDialog.isShowing()){
+//                if (bottomSheetDialog.isShowing()){
                     bottomSheetDialog.dismiss();
-                } else {
-                    bottomSheetDialog.show();
-                }
+//                } else {
+//                    bottomSheetDialog.show();
+//                }
                 TextView txttenbai =(TextView) view.findViewById(R.id.textviewtenbaihatdangnghe);
                 TextView txtcasi =(TextView) view.findViewById(R.id.textviewtennghesihat);
                 TextView txtluotnghe =(TextView) view.findViewById(R.id.textviewluotnghebaihat);
