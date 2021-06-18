@@ -13,6 +13,7 @@
         android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="@id/drawer_user_name"
         app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_baseline_supervised_user_circle_24"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="contentDescription"
         tools:src="@tools:sample/avatars" />
@@ -64,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@id/drawer_user_name" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/singerinfo"
+        android:id="@+id/equalizer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?selectableItemBackground"
@@ -89,5 +90,5 @@
         android:paddingBottom="16dp"
         android:text="@string/group_name"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-        app:layout_constraintTop_toBottomOf="@id/singerinfo" />
+        app:layout_constraintTop_toBottomOf="@id/equalizer" />
 </androidx.constraintlayout.widget.ConstraintLayout>

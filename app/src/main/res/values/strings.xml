@@ -9,9 +9,9 @@
     <string name="version">Phiên bản 1.0</string>
     <string name="lyric">Lyric</string>
     <string name="name">Họ tên</string>
-    <string name="loibaihat">Lời Bài Hát</string>
+    <string name="lyricsong">Lời Bài Hát</string>
     <string name="nowplaying">Đang Phát</string>
-    <string name="group_name">Made by NVT Group</string>
+    <string name="group_name">Made by \u2665 NVT Group</string>
     <string name="songinfo">Thông tin bài hát</string>
     <string name="user_name">Tên đăng nhập</string>
     <string name="signup_now">Đăng ký ngay</string>
@@ -28,6 +28,7 @@
     <string name="listens">Lượt nghe</string>
     <string name="songname">Tên bài hát</string>
     <string name="sign_in_to_continue">Đăng nhập để tiếp tục</string>
+    <string name="equalizer_error">Equalizer mặc định không tìm thấy</string>
     <string name="submit">Xác nhận</string>
     <string name="song">Bài hát</string>
     <string name="album">Album</string>

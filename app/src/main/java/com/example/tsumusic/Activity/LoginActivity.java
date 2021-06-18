@@ -157,7 +157,6 @@ public class LoginActivity extends AppCompatActivity {
                     //Toast.makeText(SignInActivity.this, user.getResponse() + ",Tài khoản hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onFailure(Call<User> call, Throwable t) {
                 Toast.makeText(LoginActivity.this, "Đăng nhập thất bại!", Toast.LENGTH_SHORT);

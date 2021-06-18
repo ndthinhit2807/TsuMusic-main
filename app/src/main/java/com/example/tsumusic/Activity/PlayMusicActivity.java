@@ -447,7 +447,6 @@ public class PlayMusicActivity extends AppCompatActivity {
 
         imglyrics.setOnTouchListener(new View.OnTouchListener() {
 
-            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
