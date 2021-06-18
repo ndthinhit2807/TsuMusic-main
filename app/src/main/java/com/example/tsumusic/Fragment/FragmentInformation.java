@@ -107,6 +107,12 @@ public class FragmentInformation extends Fragment {
                 Animatoo.animateSlideRight(getActivity());
             }
         });
+        playlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Chức năng đang phát triển", Toast.LENGTH_SHORT).show();
+            }
+        });
         return view;
     }
 }

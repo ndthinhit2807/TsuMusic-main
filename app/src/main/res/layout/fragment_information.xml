@@ -113,9 +113,9 @@
                 android:layout_marginTop="0.8dp"
                 android:layout_toRightOf="@+id/imageviewdoimatkhau"
                 android:background="@color/transparent"
-                android:text="Đổi mật khẩu"
+                android:text="@string/change_password"
                 android:textAllCaps="false"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 

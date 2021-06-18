@@ -37,6 +37,7 @@
     <string name="create_an_account">Tạo tài khoản</string>
     <string name="password">Mật khẩu</string>
     <string name="album_name">Tên album</string>
+    <string name="change_password">Đổi mật khẩu</string>
     <string name="oldpassword">Mật khẩu cũ</string>
     <string name="newpassword">Mật khẩu mới</string>
     <string name="genre">Thể loại</string>
