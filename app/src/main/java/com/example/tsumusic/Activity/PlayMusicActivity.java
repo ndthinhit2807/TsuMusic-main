@@ -1,6 +1,5 @@
 package com.example.tsumusic.Activity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,7 +12,6 @@ import android.os.Handler;
 import android.os.StrictMode;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 
 import android.view.MotionEvent;
 import android.view.View;
@@ -21,9 +19,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
@@ -31,7 +27,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.tsumusic.Adapter.ViewpagerListsongplay;
-import com.example.tsumusic.Fragment.FragmentBottomsheetdialog;
+import com.example.tsumusic.Dialog.Bottomsheetdialog;
 import com.example.tsumusic.Fragment.FragmentListsongplay;
 import com.example.tsumusic.Fragment.FragmentMusicdisc;
 import com.example.tsumusic.Model.Song;
@@ -39,7 +35,6 @@ import com.example.tsumusic.R;
 import com.example.tsumusic.Service.API_Service;
 import com.example.tsumusic.Service.Service_Data;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -420,9 +415,9 @@ public class PlayMusicActivity extends AppCompatActivity {
                         view.getDrawable().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         view.invalidate();
                         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PlayMusicActivity.this);
-                        bottomSheetDialog.setContentView(R.layout.fragment_bottom_sheet);
-                        FragmentBottomsheetdialog myDialog
-                                = new FragmentBottomsheetdialog();
+                        bottomSheetDialog.setContentView(R.layout.dialog_bottomsheet);
+                        Bottomsheetdialog myDialog
+                                = new Bottomsheetdialog();
                         FragmentManager fm = getSupportFragmentManager();
                         myDialog.show(fm, "FirstBottomSheetDialogFragment");
                         putStringValue("tenbaihat", mangbaihat.get(positon).getTenbaihat());

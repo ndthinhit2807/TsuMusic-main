@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_primary"
-    android:orientation="vertical"
-    tools:context=".Activity.SonginfoActivity">
-
-
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="270dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
+        android:id="@+id/textviewthongtinbaihat"
         android:text="@string/songinfo"
         android:textAllCaps="true"
         android:textSize="25sp" />
 
     <RelativeLayout
+        android:layout_below="@id/textviewthongtinbaihat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
         android:gravity="center">
 
         <TextView
@@ -38,7 +36,7 @@
             android:id="@+id/textviewtenbaihatdangnghe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="39.5dp"
+            android:layout_marginLeft="43dp"
             android:layout_toRightOf="@+id/tenbaihatinfo"
             android:ellipsize="end"
             android:maxLines="1"
@@ -51,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tenbaihatinfo"
             android:layout_marginTop="20dp"
-            android:text="Tên Nghệ Sĩ"
+            android:text="@string/singername"
             android:textSize="16sp" />
 
         <TextView
@@ -59,7 +57,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tenbaihatinfo"
-            android:layout_marginLeft="36dp"
+            android:layout_marginLeft="58dp"
+            android:fontFamily="@font/roboto_regular"
             android:layout_marginTop="20dp"
             android:layout_toRightOf="@+id/tennghesiinfo"
             android:ellipsize="end"
@@ -114,21 +113,6 @@
             android:text="24-05-2021"
             android:textSize="16sp" />
     </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/backbuttonsonginfo"
-            style="@style/ButtonStyle36"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="10dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:src="@drawable/ic_down_arrow" />
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

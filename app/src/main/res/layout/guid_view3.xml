@@ -13,7 +13,7 @@
             android:id="@+id/imageviewbg01"
             android:layout_width="match_parent"
             android:layout_height="620dp"
-            android:src="@drawable/welcome02" />
+            android:src="@drawable/img_welcome02" />
 
         <TextView
             android:id="@+id/textviewbg00"

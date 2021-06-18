@@ -67,6 +67,4 @@ public class AdapterAlbum extends RecyclerView.Adapter<AdapterAlbum.ViewHolder>{
     public int getItemCount() {
         return mangalbum.size();
     }
-
-
 }

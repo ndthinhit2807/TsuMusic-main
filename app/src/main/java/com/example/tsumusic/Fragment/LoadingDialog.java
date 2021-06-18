@@ -19,7 +19,7 @@ public class LoadingDialog {
     public void StartLoadingDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);    //Khởi tạo thông báo
         LayoutInflater inflater = activity.getLayoutInflater();
-        builder.setView(inflater.inflate(R.layout.customdialog, null));
+        builder.setView(inflater.inflate(R.layout.dialog_loadscreen, null));
         builder.setCancelable(true);
         dialog = builder.create();
         dialog.show();

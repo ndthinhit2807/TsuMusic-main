@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:background="@drawable/shape_bg"
+        android:background="@drawable/background_shape01"
         android:gravity="center"
         android:orientation="vertical"
         android:minWidth="80dp"
@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Successfully loaded"
+            android:maxLines="2"
             android:textColor="#ffffff"
             android:textSize="14sp" />
     </LinearLayout>

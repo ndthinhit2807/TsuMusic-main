@@ -62,15 +62,15 @@ public class HomeActivity extends AppCompatActivity {
 
     //   Set màu cho TabLayout + ViewPage
     private void setupTabIcons() { //set màu icon
-        tabLayout.getTabAt(0).setIcon(R.drawable.home);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home);
         tabLayout.getTabAt(0).getIcon().setColorFilter(Color.parseColor("#FF6347"), PorterDuff.Mode.SRC_IN);
-        tabLayout.getTabAt(1).setIcon(R.drawable.musicalnotes);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_song);
         tabLayout.getTabAt(1).getIcon().setColorFilter(Color.parseColor("#000000"), PorterDuff.Mode.SRC_IN);
-        tabLayout.getTabAt(2).setIcon(R.drawable.microphone);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_microphone);
         tabLayout.getTabAt(2).getIcon().setColorFilter(Color.parseColor("#000000"), PorterDuff.Mode.SRC_IN);
-        tabLayout.getTabAt(3).setIcon(R.drawable.music);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_music);
         tabLayout.getTabAt(3).getIcon().setColorFilter(Color.parseColor("#000000"), PorterDuff.Mode.SRC_IN);
-        tabLayout.getTabAt(4).setIcon(R.drawable.userssss);
+        tabLayout.getTabAt(4).setIcon(R.drawable.ic_user);
         tabLayout.getTabAt(4).getIcon().setColorFilter(Color.parseColor("#000000"), PorterDuff.Mode.SRC_IN);
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

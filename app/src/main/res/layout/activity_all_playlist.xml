@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.All_Toplist_Activity"
-    android:background="@drawable/custom_backgroud">
+    android:background="@drawable/background_secondary">
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:id="@+id/tollbarallplaylists"

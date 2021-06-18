@@ -3,30 +3,22 @@ package com.example.tsumusic.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.tsumusic.Activity.PlayMusicActivity;
-import com.example.tsumusic.Fragment.FragmentBottomsheetdialog;
 import com.example.tsumusic.Model.Song;
 import com.example.tsumusic.R;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHolder> {
     Context context;
@@ -44,7 +36,6 @@ public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHo
             txttenbaihat = itemview.findViewById(R.id.textviewtencakhuc);
             hinhbaihat = itemview.findViewById(R.id.textviewindex);
             txtluotnghe = itemview.findViewById(R.id.textviewlistsonghienthiluotnghe);
-            imgmore = view.findViewById(R.id.more);
             itemview.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
