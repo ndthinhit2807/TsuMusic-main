@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
-import com.example.tsumusic.Activity.PlayMusicActivity;
+import com.example.tsumusic.Activity.PlaysongsActivity;
 import com.example.tsumusic.Model.Song;
 import com.example.tsumusic.R;
 import com.squareup.picasso.Picasso;
@@ -88,7 +88,7 @@ public class AdapterSongsuggestions extends RecyclerView.Adapter<AdapterSongsugg
             relativeLayoutclick.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, PlayMusicActivity.class);
+                    Intent intent = new Intent(context, PlaysongsActivity.class);
                     intent.putExtra("Baihat", mangbaihat.get(getPosition()));   //Gửi key dữ liệu
                     context.startActivity(intent);
                     Animatoo.animateSlideUp(context);

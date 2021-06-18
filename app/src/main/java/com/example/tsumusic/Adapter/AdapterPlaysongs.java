@@ -16,11 +16,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class AdapterPlaysong extends RecyclerView.Adapter<AdapterPlaysong.ViewHolder> {
+public class AdapterPlaysongs extends RecyclerView.Adapter<AdapterPlaysongs.ViewHolder> {
     Context context;
     ArrayList<Song> mangbaihat;
 
-    public AdapterPlaysong(Context context, ArrayList<Song> mangbaihat) {
+    public AdapterPlaysongs(Context context, ArrayList<Song> mangbaihat) {
         this.context = context;
         this.mangbaihat = mangbaihat;
     }

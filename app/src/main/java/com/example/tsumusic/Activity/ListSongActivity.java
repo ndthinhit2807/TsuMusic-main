@@ -1,8 +1,6 @@
 package com.example.tsumusic.Activity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -260,7 +258,7 @@ public class ListSongActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ListSongActivity.this, PlayMusicActivity.class);
+                Intent intent = new Intent(ListSongActivity.this, PlaysongsActivity.class);
                 intent.putExtra("cacbaihat", mangbaihat); //gửi ket dữ liệu list bài hát
                 startActivity(intent);
                 Animatoo.animateSlideUp(ListSongActivity.this);

@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tsumusic.Adapter.AdapterSearchforsinger;
-import com.example.tsumusic.Adapter.AdapterSearchforsong;
+import com.example.tsumusic.Adapter.AdapterSearchforsongs;
 import com.example.tsumusic.Model.Singer;
 import com.example.tsumusic.Model.Song;
 import com.example.tsumusic.R;
@@ -39,7 +39,7 @@ public class Tab_Search_Fragment extends Fragment {
     Toolbar toolbar;
     RecyclerView recyclerViewsearch;
     TextView txtkhongcodulieu;
-    AdapterSearchforsong adapter_searchforsong;
+    AdapterSearchforsongs adapter_searchforsong;
     AdapterSearchforsinger adapter_searchforsinger;
     ArrayList<Song> mangbaihat;
     ArrayList<Singer> mangcasi;
@@ -91,7 +91,7 @@ public class Tab_Search_Fragment extends Fragment {
             public void onResponse(Call<List<Song>> call, Response<List<Song>> response) {
                 mangbaihat = (ArrayList<Song>) response.body();
                 if (mangbaihat.size() > 0) {
-                    adapter_searchforsong = new AdapterSearchforsong(getActivity(), mangbaihat);
+                    adapter_searchforsong = new AdapterSearchforsongs(getActivity(), mangbaihat);
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
                     recyclerViewsearch.setLayoutManager(linearLayoutManager);
                     recyclerViewsearch.setAdapter(adapter_searchforsong);

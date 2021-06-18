@@ -28,7 +28,7 @@
             android:name=".Activity.All_Toplist_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activity.PlayMusicActivity"
+            android:name=".Activity.PlaysongsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.ListSongActivity"

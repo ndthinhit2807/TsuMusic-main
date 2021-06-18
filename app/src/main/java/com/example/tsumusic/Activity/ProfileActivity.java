@@ -49,7 +49,6 @@ public class ProfileActivity extends AppCompatActivity {
         name.setText(sharedPreferences.getString("name", null));
         username.setText(sharedPreferences.getString("username", null));
         email.setText(sharedPreferences.getString("email", null));
-
         if (sharedPreferences.getString("urlimage", null) != null) {
             Picasso.with(context).load(sharedPreferences.getString("urlimage", null)).into(circleImageView);
         }

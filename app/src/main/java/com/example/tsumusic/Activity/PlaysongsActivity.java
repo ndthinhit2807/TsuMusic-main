@@ -45,7 +45,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PlayMusicActivity extends AppCompatActivity {
+public class PlaysongsActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     TextView textCurrentTime, textTotalTime, txttencasi, txttenbaihat;
@@ -67,7 +67,7 @@ public class PlayMusicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        setContentView(R.layout.activity_play_song);
+        setContentView(R.layout.activity_play_songs);
         onStop();
         GetDataIntent();
 //        for(Song a : mangbaihat)
@@ -89,7 +89,6 @@ public class PlayMusicActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(key, value);
         editor.apply();
-
     }
 
     @Override
@@ -385,7 +384,7 @@ public class PlayMusicActivity extends AppCompatActivity {
                             mangbaihat.clear();
                         }
                         finish();
-                        Animatoo.animateSlideDown(PlayMusicActivity.this);
+                        Animatoo.animateSlideDown(PlaysongsActivity.this);
                         break;
                     }
                     case MotionEvent.ACTION_UP:
@@ -414,7 +413,7 @@ public class PlayMusicActivity extends AppCompatActivity {
                         //overlay is black with transparency of 0x77 (119)
                         view.getDrawable().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         view.invalidate();
-                        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PlayMusicActivity.this);
+                        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PlaysongsActivity.this);
                         bottomSheetDialog.setContentView(R.layout.dialog_bottomsheet);
                         Bottomsheetdialog myDialog
                                 = new Bottomsheetdialog();
@@ -456,10 +455,10 @@ public class PlayMusicActivity extends AppCompatActivity {
                         //overlay is black with transparency of 0x77 (119)
                         view.getDrawable().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         view.invalidate();
-                        Intent intent = new Intent(PlayMusicActivity.this,LyricActivity.class);
+                        Intent intent = new Intent(PlaysongsActivity.this,LyricActivity.class);
                         startActivity(intent);
                         putStringValue("loibaihat", mangbaihat.get(positon).getLoibaihat());
-                        Animatoo.animateSlideUp(PlayMusicActivity.this);
+                        Animatoo.animateSlideUp(PlaysongsActivity.this);
                         break;
                     }
                     case MotionEvent.ACTION_UP:

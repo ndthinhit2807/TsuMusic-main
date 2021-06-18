@@ -144,7 +144,6 @@ public class ChangepasswordActivity extends AppCompatActivity {
                         confirmpwd.requestFocus();
                     }
                 }
-
                 @Override
                 public void onFailure(Call<User> call, Throwable t) {
                 }

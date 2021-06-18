@@ -12,15 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
-import com.example.tsumusic.Activity.PlayMusicActivity;
+import com.example.tsumusic.Activity.PlaysongsActivity;
 import com.example.tsumusic.Model.Song;
 import com.example.tsumusic.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class AdapterSearchforsong extends RecyclerView.Adapter<AdapterSearchforsong.ViewHolder> {
-    public AdapterSearchforsong(Context context, ArrayList<Song> mangbaihat) {
+public class AdapterSearchforsongs extends RecyclerView.Adapter<AdapterSearchforsongs.ViewHolder> {
+    public AdapterSearchforsongs(Context context, ArrayList<Song> mangbaihat) {
         this.context = context;
         this.mangbaihat = mangbaihat;
     }
@@ -61,7 +61,7 @@ public class AdapterSearchforsong extends RecyclerView.Adapter<AdapterSearchfors
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, PlayMusicActivity.class);
+                    Intent intent = new Intent(context, PlaysongsActivity.class);
                     intent.putExtra("Baihat", mangbaihat.get(getPosition()));    //Gửi key dữ liệu đi
                     context.startActivity(intent);
                     Animatoo.animateSlideUp(context);
