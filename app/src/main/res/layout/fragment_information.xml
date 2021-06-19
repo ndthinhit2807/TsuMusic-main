@@ -159,10 +159,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:src="@drawable/ic_user_manual" />
+                android:src="@drawable/ic_guide" />
 
             <Button
-                android:id="@+id/tuto"
+                android:id="@+id/buttonguideapp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"

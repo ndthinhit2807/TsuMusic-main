@@ -59,9 +59,20 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
+            android:justificationMode="inter_word"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/introduce"
-            android:textAlignment="center"
+            android:id="@+id/txtgioithieu"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/txtgioithieu"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/contact"
             android:textSize="16sp" />
     </RelativeLayout>
 

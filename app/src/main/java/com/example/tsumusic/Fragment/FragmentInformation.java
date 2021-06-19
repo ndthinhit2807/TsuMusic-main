@@ -19,11 +19,12 @@ import com.example.tsumusic.Activity.AppinformationActivity;
 import com.example.tsumusic.Activity.ChangepasswordActivity;
 import com.example.tsumusic.Activity.ProfileActivity;
 import com.example.tsumusic.Activity.LoginActivity;
+import com.example.tsumusic.Activity.UserguideActivity;
 import com.example.tsumusic.R;
 
 public class FragmentInformation extends Fragment {
     View view;
-    Button signin, signout, changepwd, information, playlist, informationapp;
+    Button signin, signout, changepwd, information, playlist, informationapp, userguide;
 
     @Nullable
     @Override
@@ -35,9 +36,18 @@ public class FragmentInformation extends Fragment {
         information = view.findViewById(R.id.information_user);
         playlist = view.findViewById(R.id.information_playlist);
         informationapp = view.findViewById(R.id.btninformationapp);
+        userguide = view.findViewById(R.id.buttonguideapp);
         signout.setEnabled(false);
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
+        userguide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), UserguideActivity.class);
+                startActivity(intent);
+                Animatoo.animateSlideRight(getActivity());
+            }
+        });
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

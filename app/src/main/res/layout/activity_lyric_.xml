@@ -15,6 +15,7 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
+        android:textAllCaps="true"
         android:text="@string/lyricsong"
         android:textSize="25sp" />
 
