@@ -55,9 +55,24 @@
     <string name="icon_desc">Icon button</string>
     <string name="i_have_already_account">Đã có tài khoản?</string>
     <string name="login_now">Đăng nhập ngay</string>
-    <string name="guide">  <![CDATA[<u><font color=#0000FF>1. Tìm kiếm</font></u>]]> \nĐể tìm kiếm Bài hát/Ca sĩ trên ứng dụng Tsumusic. Bạn làm theo các hướng dẫn sau: \n<b>B1: Nhập từ khoá</b> tìm vào khung tìm kiếm ở tab tìm kiếm
+    <string name="guide">  <![CDATA[<u><b>1. Tìm kiếm</b></u><br>
+                           Để tìm kiếm Bài hát/Ca sĩ trên ứng dụng Tsumusic. Bạn làm theo các hướng dẫn sau:<br><br>
+                          <b>B1:</b> Nhập từ khoá cần tìm vào khung tìm kiếm ở tab tìm kiếm<br>
+                          <b>B2:</b> Tại đây sẽ xổ ra danh sách bài hát,ca sĩ gợi ý<br>
+                          <b>B3:</b> Chọn nội dụng mà bạn đang cần tìm<br><br><br>
 
-
-    </string>
+                          <u><b color=#0000FF>2. Phát nhạc</b></u><br>
+                          Để nghe nhạc/album nhạc/nhạc của sĩ/playlist nhạc chúng ta cần những bước sau:<br><br>
+                          <b>B1:</b> Tại màn hình chính có 3 tab phát nhạc chính tương tứng với <b>\"Trang chủ\"</b>, <b>\"Bài hát\"</b>, <b>\"Nghệ sĩ\"</b><br>
+                          <b>&#8250</b> <b>Trang chủ</> Bạn có thể nghe nhạc từ banner, album,playlist và các bài hát gợi ý<br>
+                          <b>&#8250</b> <b>Bài hát</> Tổng hợp tất cả bài hát được tải lên<br>
+                          <b>&#8250</b> <b>Nghệ sĩ</> Tổng hợp list nhạc của các ca sĩ<br>
+                           <b>B2:</b> Chọn nhạc hoặc danh sách nhạc cần phát<br>
+                           <b>&#8250</b> Click vào item các bài hát nếu bạn muốn nghe từng bài<br>
+                           <b>&#8250</b> Click vào nút play nếu bạn muốn nghe toàn một nhạc của playlist đó<br>
+                           <b>B3:</b> Để phát nhạc ngẫu nhiên, lặp lại bài hát đang nghe<br>
+                           <b>&#8250</b> Phát ngẫu nhiên bài hát: chọn vào nút <b>\"Shuffer\"</b> nằm phía bên trái nút \"Back bài hát\"<br>
+                            <b>&#8250</b> Lặp lại bài hát đang nghe: chọn vào nút <b>\"Repeat\"</b> nằm phía bên phải nút \"Next bài hát\"<br>]]>
+     </string>
 
 </resources>

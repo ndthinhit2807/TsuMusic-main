@@ -24,7 +24,7 @@
             android:id="@+id/textviewguide"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lineSpacingExtra="15dp"
+            android:lineSpacingExtra="5dp"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/guide"
             android:textSize="16sp" />

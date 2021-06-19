@@ -51,7 +51,6 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
-
     @Override
     protected void onPause() {
         super.onPause();

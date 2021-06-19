@@ -59,14 +59,6 @@ public class Bottomsheetdialog extends BottomSheetDialogFragment {
         txtusername = view.findViewById(R.id.drawer_user_name);
         imglogo = view.findViewById(R.id.drawer_user_logo);
         txtequalizer = view.findViewById(R.id.equalizer);
-//        txtsonginfo.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), SonginfoActivity.class);
-//                startActivity(intent);
-//                Animatoo.animateSlideUp(getActivity());
-//            }
-//        });
         txtsonginfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

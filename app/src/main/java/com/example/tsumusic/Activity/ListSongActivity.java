@@ -73,6 +73,7 @@ public class ListSongActivity extends AppCompatActivity {
             setValueInView(singer.getTencasi(), singer.getUrlcasi());
             GetDataSinger(singer.getMacasi());
         }
+        // equals"" mac định là true
         if (album != null && !album.getTenalbum().equals("")) {
             setValueInView(album.getTenalbum(), album.getUrlalbum());
             GetDataAllalbum(album.getMaalbum());
@@ -224,7 +225,7 @@ public class ListSongActivity extends AppCompatActivity {
 
         Picasso.with(this).load(hinh).into(imglistsong);
     }
-//    Gửi các key dữ liệu đi
+//
     private void DataIntent() {
         Intent intent = getIntent();
         if (intent != null) {

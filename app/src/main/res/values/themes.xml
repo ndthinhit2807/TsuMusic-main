@@ -24,5 +24,4 @@
     <style name="SeekBarTheme" parent="Widget.AppCompat.SeekBar">
         <item name="colorAccent">@color/colorBlack</item>
     </style>
-
 </resources>
