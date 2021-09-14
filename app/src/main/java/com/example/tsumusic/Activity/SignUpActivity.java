@@ -73,8 +73,7 @@ public class SignUpActivity extends AppCompatActivity {
         Matcher matcher = pattern.matcher(password1);
         return matcher.matches();
     }
-
-    //    hiện thông báo fail
+    //hiện thông báo fail
     protected void showToastFailure(String msg) {
         if (mmToast == null) {
             MMToast.Builder builder = new MMToast.Builder(this)
@@ -96,13 +95,13 @@ public class SignUpActivity extends AppCompatActivity {
         user_name1 = user_name.getEditText().getText().toString().trim();
         password1 = password.getEditText().getText().toString().trim();
         email1 = email.getEditText().getText().toString().trim();
-//                Kiểm tra rỗng
+        //Kiểm tra rỗng
         if (name1.isEmpty()) {
             name.setError("Nhập họ tên!");
             name.requestFocus();
             return;
         }
-//                Kiểm tra độ dài
+        //Kiểm tra độ dài
         else if (name1.length() > 50) {
             name.setError("Họ tên vượt quá độ dài cho phép!");
             name.requestFocus();

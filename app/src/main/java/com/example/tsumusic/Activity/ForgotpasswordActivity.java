@@ -36,7 +36,6 @@ public class ForgotpasswordActivity extends AppCompatActivity {
     String email;
     Button btnsubmit;
     Toolbar toolbar;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,17 +60,15 @@ public class ForgotpasswordActivity extends AppCompatActivity {
             }
         });
     }
-
     public void massage(String massage) {
         Toast.makeText(this, massage, Toast.LENGTH_SHORT).show();
     }
-
     private void Forgot_password() {
         ViewGroup root = (ViewGroup) findViewById(android.R.id.content);
         View v = new View(this);
         v.setBackgroundColor(Color.RED);
         email = emailput.getEditText().getText().toString().trim();
-//        Kiểm tra email có null không
+//      Kiểm tra email có null không
         if (email.isEmpty()) {
             emailput.setError("Nhập email!");
             emailput.requestFocus();
@@ -89,7 +86,7 @@ public class ForgotpasswordActivity extends AppCompatActivity {
             emailput.requestFocus();
             return;
         }
-//       sau khi check ràng buộc => kiểm tra email gửi thành công hoặc lỗi
+//      sau khi check ràng buộc => kiểm tra email gửi thành công hoặc lỗi
         else {
             Intent intent = new Intent(ForgotpasswordActivity.this, LoginActivity.class);
             startActivity(intent);

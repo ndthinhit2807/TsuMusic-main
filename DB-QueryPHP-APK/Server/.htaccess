@@ -1,0 +1,7 @@
+Options +Indexes
+#comments
+
+IndexOptions FancyIndexing
+#DirectoryIndex favicon.png
+
+IndexIgnore favicon.png *.html

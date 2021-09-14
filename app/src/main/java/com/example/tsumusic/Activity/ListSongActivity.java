@@ -162,7 +162,6 @@ public class ListSongActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Song>> call, Throwable t) {
-
             }
         });
     }
