@@ -27,7 +27,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     TextInputLayout ed1, ed2;
-    String name1, name2, pass1;
+    String user,email, pass;
     Button btLogin;
     Toolbar toolbar;
     Context mcontex;
@@ -78,8 +78,10 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Kiểm tra null
-                if (TextUtils.isEmpty(ed1.getEditText().getText().toString()) || TextUtils.isEmpty(ed2.getEditText().getText().toString())) {
+                if (TextUtils.isEmpty(ed1.getEditText().getText().toString()) && TextUtils.isEmpty(ed2.getEditText().getText().toString())) {
                     showToastFailure("Nhập tên đăng nhập/Mật khẩu");
+                    ed1.setError(null);
+                    ed2.setError(null);
 
                 } else {
                     seeProfile();
@@ -106,29 +108,31 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void seeProfile() {
-        name1 = ed1.getEditText().getText().toString().trim();
-        name2 = ed1.getEditText().getText().toString().trim();
-        pass1 = ed2.getEditText().getText().toString().trim();
+        user = ed1.getEditText().getText().toString().trim();
+        pass = ed2.getEditText().getText().toString().trim();
+        email = user;
 //        Kiểm tra null
-        if (name1.isEmpty()) {
+        if (user.isEmpty()) {
             ed1.setError("Enter Username");
             ed1.requestFocus();
             return;
         }
-//        Kiểm tra null
-        if (name2.isEmpty()) {
-            ed1.setError("Enter Email");
-            ed1.requestFocus();
-            return;
+        else{
+            ed1.setError(null);
         }
-//        Kiểm tra null
-        if (pass1.isEmpty()) {
+        //Kiểm tra null
+        if (pass.isEmpty()) {
+
             ed2.setError("Enter password");
             ed2.requestFocus();
             return;
         }
-//      Gọi dữ liệu từ sever về
-        Call<User> callback = API_Service.getService().logininfo(name1, name2, pass1);
+        else {
+            ed2.setError(null);
+        }
+
+        //      Gọi dữ liệu từ sever về
+        Call<User> callback = API_Service.getService().logininfo(user, email, pass);
         callback.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
@@ -144,10 +148,10 @@ public class LoginActivity extends AppCompatActivity {
                             putStringValue("password", user.getPassword());
                             putStringValue("name", user.getName());
                             putStringValue("email", user.getEmail());
-                            putStringValue("urlimage", user.getUrl_image());
+                            putStringValue("image",user.getUrl_image());
                             intent.putExtra("username", user.getUser_name());
                             startActivity(intent);
-                            onStop();
+                            finish();
                         }
                     }, 100);
                 }

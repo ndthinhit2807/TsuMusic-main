@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Playlist_Activity"
+    android:background="@drawable/background_primary">
+
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       >
+
+       <androidx.appcompat.widget.Toolbar
+           android:layout_width="match_parent"
+           android:id="@+id/tool_Playlist"
+           android:layout_height="?attr/actionBarSize"/>
+
+       <de.hdodenhof.circleimageview.CircleImageView
+           android:id="@+id/img_Createplaylist"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/tool_Playlist"
+           android:layout_marginStart="25dp"
+
+           android:src="@mipmap/ic_launcher">
+
+       </de.hdodenhof.circleimageview.CircleImageView>
+
+       <TextView
+           android:id="@+id/text_Createplaylist"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/img_Createplaylist"
+           android:layout_marginLeft="14dp"
+           android:layout_marginBottom="20dp"
+           android:layout_toRightOf="@+id/img_Createplaylist"
+           android:text="Tạo playlist"
+           android:textColor="@color/black"
+           android:textSize="25dp"
+           android:textStyle="bold">
+
+       </TextView>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/recy_Playlist"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_below="@+id/text_Createplaylist">
+
+       </androidx.recyclerview.widget.RecyclerView>
+   </RelativeLayout>
+
+
+</ScrollView>

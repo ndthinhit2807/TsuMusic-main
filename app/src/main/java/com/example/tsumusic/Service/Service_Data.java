@@ -87,8 +87,10 @@ public interface Service_Data {
     Call<String> getupdateluotnghe(@Field("luotnghe") String luotnghe, @Field("idbaihat") String idbaihat);
 
     @FormUrlEncoded
-    @POST("userplaylist.php")
+    @POST("playlist_user.php")
+//    Call<List<UserPlaylist>> GetUserPlaylist(@Field("username") String username);
     Call<List<UserPlaylist>> GetUserPlaylist(@Field("username") String username);
+//    Call<List<UserPlaylist>> GetUserPlaylist();
 
     @FormUrlEncoded
     @POST("signup.php")

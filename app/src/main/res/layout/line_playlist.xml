@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/img_createplaylist"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="25dp">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <TextView
+        android:id="@+id/text_nameplayplist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img_createplaylist"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="40dp"
+        android:layout_toRightOf="@+id/img_createplaylist"
+android:text="@string/sign_in_to_continue"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_decription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img_createplaylist"
+        android:layout_marginLeft="20dp"
+        android:text="@string/sign_in_to_continue"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@+id/img_createplaylist"
+
+        android:textColor="@color/black"
+        android:textSize="15dp">
+
+    </TextView>
+</RelativeLayout>

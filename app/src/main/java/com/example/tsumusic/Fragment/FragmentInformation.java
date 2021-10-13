@@ -1,5 +1,6 @@
 package com.example.tsumusic.Fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.tsumusic.Activity.AppinformationActivity;
 import com.example.tsumusic.Activity.ChangepasswordActivity;
+import com.example.tsumusic.Activity.Playlist_Activity;
 import com.example.tsumusic.Activity.ProfileActivity;
 import com.example.tsumusic.Activity.LoginActivity;
 import com.example.tsumusic.Activity.UserguideActivity;
@@ -54,6 +56,8 @@ public class FragmentInformation extends Fragment {
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
                 Animatoo.animateSlideRight(getActivity());
+                getActivity().finish();
+
             }
         });
         if (sharedPreferences.getString("username", null) != null) {
@@ -120,7 +124,9 @@ public class FragmentInformation extends Fragment {
         playlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Chức năng đang phát triển", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), Playlist_Activity.class);
+                startActivity(intent);
+                Animatoo.animateSlideRight(getActivity());
             }
         });
         return view;

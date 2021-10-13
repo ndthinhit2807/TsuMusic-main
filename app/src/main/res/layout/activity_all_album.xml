@@ -12,10 +12,11 @@
         android:id="@+id/tollbarallalbum"
         android:layout_height="?attr/actionBarSize"
         app:layout_scrollFlags="scroll"/>
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginLeft="15dp"
+        android:id="@+id/recycleallalbuum"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tollbarallalbum"
-        android:id="@+id/recycleallalbuum"/>
+        android:layout_marginLeft="15dp" />
 </RelativeLayout>

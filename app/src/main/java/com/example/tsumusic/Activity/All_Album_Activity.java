@@ -43,7 +43,6 @@ public class All_Album_Activity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Album>> call, Response<List<Album>> response) {
                 mangalbum = (ArrayList<Album>) response.body();
-               Log.d("mmmm",mangalbum.get(0).getTenalbum());
                 adapter_allAlbum = new Adapter_Allalbum(All_Album_Activity.this,mangalbum);
                 recyclerViewallalbum.setLayoutManager(new GridLayoutManager(All_Album_Activity.this,2));// chia danh sách album thành 2 cột
                 recyclerViewallalbum.setAdapter(adapter_allAlbum);

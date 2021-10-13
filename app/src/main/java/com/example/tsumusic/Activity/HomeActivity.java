@@ -42,9 +42,10 @@ public class HomeActivity extends AppCompatActivity {
         setupTabIcons();
     }
 
-    @Override
-    public void onBackPressed() {
-    }
+//    @Override
+//    public void onBackPressed() {
+//        onStop();
+//    }
 
     //  phân chia các fragment,activity theo các nút bottom
     private void init() {

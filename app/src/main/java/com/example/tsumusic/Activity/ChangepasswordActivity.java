@@ -102,14 +102,11 @@ public class ChangepasswordActivity extends AppCompatActivity {
             newpwd.requestFocus();
             return;
 //          Kiểm tra độ dài password
-        } else if (newpwd1.length() < 6) {
+        } else if (newpwd1.length() < 6 || newpwd1.length() > 20) {
             newpwd.setError("Nhập mật khẩu từ 6 đén 20 ký tự!");
             newpwd.requestFocus();
             return;
-        } else if (newpwd1.length() > 20) {
-            newpwd.setError("Nhập mật khẩu từ 6 đến 20 ký tự!");
-            newpwd.requestFocus();
-            return;
+
         } else if (!isValidPassword(newpwd1)) {
             newpwd.setError("Mật khẩu phải có ít nhất 1 ký tự thường, hoa, số, đặc biệt!");
             newpwd.requestFocus();
