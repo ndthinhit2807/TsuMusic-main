@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.tsumusic.Adapter.Adapter_Userplaylist;
+import com.example.tsumusic.Model.ToplistToday;
+import com.example.tsumusic.Model.User;
 import com.example.tsumusic.Model.UserPlaylist;
 import com.example.tsumusic.R;
 import com.example.tsumusic.Service.API_Service;
@@ -29,6 +32,7 @@ public class Playlist_Activity extends AppCompatActivity {
     RecyclerView recy_Playlist;
     Toolbar toolbar;
     Adapter_Userplaylist adapter_userplaylist;
+    User user;
 //    SharedPreferences sharedPreferences = getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
 
 
@@ -37,15 +41,20 @@ public class Playlist_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playlist);
+        SharedPreferences sharedPreferences = getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
         init();
-        getData();
+        String username = sharedPreferences.getString("username",null);
+        if(username == null){
+
+        }
+        getData(sharedPreferences.getString("username",null));
     }
 
 
-    private void getData() {
+    private void getData(String username) {
 
         Service_Data service_data = API_Service.getService();
-        Call<List<UserPlaylist>> callback = service_data.GetUserPlaylist("nam1111");
+        Call<List<UserPlaylist>> callback = service_data.GetUserPlaylist(username);
         callback.enqueue(new Callback<List<UserPlaylist>>() {
             @Override
             public void onResponse(Call<List<UserPlaylist>> call, Response<List<UserPlaylist>> response) {
@@ -77,4 +86,5 @@ public class Playlist_Activity extends AppCompatActivity {
             }
         });
     }
+
 }

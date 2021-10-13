@@ -1,6 +1,7 @@
 package com.example.tsumusic.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.example.tsumusic.Activity.ListSongActivity;
 import com.example.tsumusic.Model.User;
 import com.example.tsumusic.Model.UserPlaylist;
 import com.example.tsumusic.R;
@@ -50,10 +53,11 @@ public class Adapter_Userplaylist extends RecyclerView.Adapter<Adapter_Userplayl
 
         TextView text_nameplaylist, text_decription;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView ) {
             super(itemView);
             text_nameplaylist = itemView.findViewById(R.id.text_nameplayplist);
             text_decription = itemView.findViewById(R.id.text_decription);
+
         }
     }
 }

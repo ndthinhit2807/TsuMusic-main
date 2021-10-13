@@ -26,7 +26,7 @@ import com.example.tsumusic.R;
 
 public class FragmentInformation extends Fragment {
     View view;
-    Button signin, signout, changepwd, information, playlist, informationapp, userguide;
+    Button signin, signout, changepwd, information, playlist, informationapp, userguide, information_playlist;
 
     @Nullable
     @Override
@@ -39,7 +39,9 @@ public class FragmentInformation extends Fragment {
         playlist = view.findViewById(R.id.information_playlist);
         informationapp = view.findViewById(R.id.btninformationapp);
         userguide = view.findViewById(R.id.buttonguideapp);
+        information_playlist = view.findViewById(R.id.information_playlist);
         signout.setEnabled(false);
+
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         userguide.setOnClickListener(new View.OnClickListener() {
@@ -129,6 +131,22 @@ public class FragmentInformation extends Fragment {
                 Animatoo.animateSlideRight(getActivity());
             }
         });
+
+        information_playlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (sharedPreferences.getString("username", null) == null) {
+
+                    Toast.makeText(getActivity(), "Bạn cần đăng nhập trước", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent intent1 = new Intent(getActivity(), Playlist_Activity.class);
+                    startActivity(intent1);
+                    Animatoo.animateSlideRight(getActivity());
+                }
+            }
+        });
+
         return view;
     }
 }
