@@ -68,6 +68,10 @@ public interface Service_Data {
 
     @FormUrlEncoded
     @POST("listsong.php")
+    Call<List<Song>> GetListsong_Userplaylist(@Field("iduserplaylist") String username);
+
+    @FormUrlEncoded
+    @POST("listsong.php")
     Call<List<Song>> Getallalbum(@Field("idplaylistalbum") String idplaylistalbum);
 
     @FormUrlEncoded
@@ -89,7 +93,7 @@ public interface Service_Data {
     @FormUrlEncoded
     @POST("playlist_user.php")
 //    Call<List<UserPlaylist>> GetUserPlaylist(@Field("username") String username);
-    Call<List<UserPlaylist>> GetUserPlaylist(@Field("username") String username);
+    Call<List<UserPlaylist>> GetUserPlaylist(@Field("username") String username,@Field("email") String email);
 //    Call<List<UserPlaylist>> GetUserPlaylist();
 
     @FormUrlEncoded

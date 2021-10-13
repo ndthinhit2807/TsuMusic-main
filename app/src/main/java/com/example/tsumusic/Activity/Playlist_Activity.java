@@ -44,17 +44,16 @@ public class Playlist_Activity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
         init();
         String username = sharedPreferences.getString("username",null);
-        if(username == null){
+        String email = sharedPreferences.getString("email",null);
 
-        }
-        getData(sharedPreferences.getString("username",null));
+        getData(username,email);
     }
 
 
-    private void getData(String username) {
+    private void getData(String username,String email) {
 
         Service_Data service_data = API_Service.getService();
-        Call<List<UserPlaylist>> callback = service_data.GetUserPlaylist(username);
+        Call<List<UserPlaylist>> callback = service_data.GetUserPlaylist(username,email);
         callback.enqueue(new Callback<List<UserPlaylist>>() {
             @Override
             public void onResponse(Call<List<UserPlaylist>> call, Response<List<UserPlaylist>> response) {

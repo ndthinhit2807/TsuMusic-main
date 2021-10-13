@@ -23,6 +23,7 @@ import com.example.tsumusic.Model.Genre;
 import com.example.tsumusic.Model.Singer;
 import com.example.tsumusic.Model.Song;
 import com.example.tsumusic.Model.ToplistToday;
+import com.example.tsumusic.Model.UserPlaylist;
 import com.example.tsumusic.R;
 import com.example.tsumusic.Service.API_Service;
 import com.example.tsumusic.Service.Service_Data;
@@ -55,6 +56,7 @@ public class ListSongActivity extends AppCompatActivity {
     Singer singer = null;
     Genre genre = null;
     Banner banner = null;
+    UserPlaylist userPlaylist = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +88,11 @@ public class ListSongActivity extends AppCompatActivity {
             setValueInView(banner.getMaquangcao(), banner.getUrlhinhquangcao());
             GetListsong_Banner(banner.getMaquangcao());
         }
+        if (userPlaylist != null && !userPlaylist.getMadanhsach().equals("")) {
+//            setValueInView(userPlaylist.getMadanhsach(), banner.getUrlhinhquangcao());
+            GetListsong_Userplaylist(userPlaylist.getMadanhsach());
+        }
+
 
         eventClick();
     }
@@ -185,6 +192,25 @@ public class ListSongActivity extends AppCompatActivity {
         });
     }
 
+    private void GetListsong_Userplaylist(String iduserplaylist) {
+        Service_Data service_data = API_Service.getService();
+        Call<List<Song>> callback = service_data.GetListsong_Userplaylist(iduserplaylist);
+        callback.enqueue(new Callback<List<Song>>() {
+            @Override
+            public void onResponse(Call<List<Song>> call, Response<List<Song>> response) {
+                mangbaihat = (ArrayList<Song>) response.body();
+                adapter_listsong = new AdapterListsong(ListSongActivity.this, mangbaihat);
+                recyclerViewdanhsachbaihat.setLayoutManager(new LinearLayoutManager(ListSongActivity.this));
+                recyclerViewdanhsachbaihat.setAdapter(adapter_listsong);
+            }
+
+            @Override
+            public void onFailure(Call<List<Song>> call, Throwable t) {
+
+            }
+        });
+    }
+
     private void Anhxa() {
         coordinatorLayout = findViewById(R.id.coordinatorlistsong);
         collapsingToolbarLayout = findViewById(R.id.collapsingToolbarLayout);
@@ -246,6 +272,10 @@ public class ListSongActivity extends AppCompatActivity {
             }
             if (intent.hasExtra("banner")) {
                 banner = (Banner) intent.getSerializableExtra("banner");
+                // Toast.makeText(this, singer.getTencasi(), Toast.LENGTH_SHORT).show();
+            }
+            if (intent.hasExtra("userplaylist")) {
+                userPlaylist = (UserPlaylist) intent.getSerializableExtra("userplaylist");
                 // Toast.makeText(this, singer.getTencasi(), Toast.LENGTH_SHORT).show();
             }
         }

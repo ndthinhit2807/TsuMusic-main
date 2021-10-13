@@ -63,7 +63,7 @@ public class FragmentInformation extends Fragment {
             }
         });
         if (sharedPreferences.getString("username", null) != null) {
-            signin.setText(sharedPreferences.getString("username", null));
+            signin.setText(sharedPreferences.getString("name", null));
             signin.setAllCaps(false);
 //            signin.setClickable(false);
             signout.setVisibility(view.VISIBLE);

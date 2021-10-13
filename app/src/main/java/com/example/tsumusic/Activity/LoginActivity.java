@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
     private void seeProfile() {
         user = ed1.getEditText().getText().toString().trim();
         pass = ed2.getEditText().getText().toString().trim();
-        email = user;
+        email = ed1.getEditText().getText().toString().trim();
 //        Kiểm tra null
         if (user.isEmpty()) {
             ed1.setError("Enter Username");
@@ -145,7 +145,6 @@ public class LoginActivity extends AppCompatActivity {
                         public void run() {
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             putStringValue("username", user.getUser_name());
-                            putStringValue("password", user.getPassword());
                             putStringValue("name", user.getName());
                             putStringValue("email", user.getEmail());
                             putStringValue("image",user.getUrl_image());
