@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +27,7 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
-    TextInputLayout ed1, ed2;
+    EditText ed1, ed2;
     String user,email, pass;
     Button btLogin;
     Toolbar toolbar;
@@ -49,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
-                Animatoo.animateSlideRight(LoginActivity.this);
+               Animatoo.animateSlideRight(LoginActivity.this);
             }
         });
         findViewById(R.id.textviewforgotpassword).setOnClickListener(new View.OnClickListener() {
@@ -70,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
-                Animatoo.animateSlideLeft(LoginActivity.this);
+               Animatoo.animateSlideLeft(LoginActivity.this);
             }
         });
 //        Button xác thực đăng nhập
@@ -78,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Kiểm tra null
-                if (TextUtils.isEmpty(ed1.getEditText().getText().toString()) && TextUtils.isEmpty(ed2.getEditText().getText().toString())) {
+                if (TextUtils.isEmpty(ed1.getText().toString()) && TextUtils.isEmpty(ed2.getText().toString())) {
                     showToastFailure("Nhập tên đăng nhập/Mật khẩu");
                     ed1.setError(null);
                     ed2.setError(null);
@@ -108,9 +109,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void seeProfile() {
+<<<<<<< Updated upstream
         user = ed1.getEditText().getText().toString().trim();
         pass = ed2.getEditText().getText().toString().trim();
         email = user;
+=======
+        user = ed1.getText().toString().trim();
+        pass = ed2.getText().toString().trim();
+        email = ed1.getText().toString().trim();
+>>>>>>> Stashed changes
 //        Kiểm tra null
         if (user.isEmpty()) {
             ed1.setError("Enter Username");

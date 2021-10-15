@@ -41,9 +41,15 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
+<<<<<<< Updated upstream
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+=======
+    androidTestImplementation ('com.android.support.test.espresso:espresso-core:3.0.2')
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+>>>>>>> Stashed changes
     implementation 'com.google.code.gson:gson:2.8.5'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'me.relex:circleindicator:1.2.2@aar'
@@ -61,4 +67,7 @@ dependencies {
     implementation 'com.android.volley:volley:1.2.0'
     compile 'net.steamcrafted:load-toast:1.0.12'
     implementation 'com.github.mohammadatif:Animatoo:master'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation( 'androidx.test:rules:1.2.0')
+    androidTestCompileOnly ('com.jayway.android.robotium:robotium-solo:5.3.1')
 }
