@@ -59,6 +59,26 @@ public class LoginActivityTest {
         Thread.sleep(5000);
     }
 
+    @Test
+    public void testUserNameNull() throws InterruptedException {
+
+        onView(withId(R.id.Username1)).perform(closeSoftKeyboard());
+        onView(withId(R.id.PassWord)).perform(typeText("Letrongnhan123@"),closeSoftKeyboard());
+        onView(withId(R.id.btnsignin)).perform(click());
+
+        Thread.sleep(5000);
+    }
+
+    @Test
+    public void testUserNamePassWordNull() throws InterruptedException {
+
+        onView(withId(R.id.Username1)).perform(closeSoftKeyboard());
+        onView(withId(R.id.PassWord)).perform(closeSoftKeyboard());
+        onView(withId(R.id.btnsignin)).perform(click());
+
+        Thread.sleep(5000);
+    }
+
 
     @After
     public void tearDown() throws Exception {
