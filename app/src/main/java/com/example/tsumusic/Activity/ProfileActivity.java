@@ -54,6 +54,7 @@ public class ProfileActivity extends AppCompatActivity {
             Picasso.with(context).load(R.drawable.avata).into(circleImageView);
         }else {
             Picasso.with(context).load(sharedPreferences.getString("image", null)).into(circleImageView);
+
         }
 
     }

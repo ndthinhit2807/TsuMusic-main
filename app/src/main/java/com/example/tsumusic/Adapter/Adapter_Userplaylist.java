@@ -2,6 +2,7 @@ package com.example.tsumusic.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.tsumusic.Activity.HomeActivity;
 import com.example.tsumusic.Activity.ListSongActivity;
+import com.example.tsumusic.Activity.LoginActivity;
 import com.example.tsumusic.Activity.PlaysongsActivity;
 import com.example.tsumusic.Model.User;
 import com.example.tsumusic.Model.UserPlaylist;
@@ -34,6 +36,7 @@ public class Adapter_Userplaylist extends RecyclerView.Adapter<Adapter_Userplayl
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.line_playlist,parent,false);
         return new ViewHolder(view);
@@ -52,7 +55,7 @@ public class Adapter_Userplaylist extends RecyclerView.Adapter<Adapter_Userplayl
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
         TextView text_nameplaylist, text_decription;
         RelativeLayout relativeLayout;
 
@@ -61,14 +64,25 @@ public class Adapter_Userplaylist extends RecyclerView.Adapter<Adapter_Userplayl
             text_nameplaylist = itemView.findViewById(R.id.text_nameplayplist);
             text_decription = itemView.findViewById(R.id.text_decription);
             relativeLayout = itemView.findViewById(R.id.relativeplaylist);
-           itemView.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View v) {
-                   Intent intent = new Intent(context, ListSongActivity.class);
-                   intent.putExtra("userplaylist",array_Userplaylist.get(getPosition()));// Gửi key dữ liệu đi
-                   context.startActivity(intent);
-               }
-           });
+          if (sharedPreferences.getString("idbaihat",null)==null){
+              itemView.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View v) {
+                      Intent intent = new Intent(context, ListSongActivity.class);
+                      intent.putExtra("userplaylist",array_Userplaylist.get(getPosition()));// Gửi key dữ liệu đi
+                      context.startActivity(intent);
+                  }
+              });
+          }else{
+              itemView.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View v) {
+                      Intent intent = new Intent(context, LoginActivity.class);
+                      intent.putExtra("userplaylist",array_Userplaylist.get(getPosition()));// Gửi key dữ liệu đi
+                      context.startActivity(intent);
+                  }
+              });
+          }
 
 
         }

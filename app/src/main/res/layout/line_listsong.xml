@@ -6,79 +6,89 @@
     android:layout_marginBottom="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/relativelistsongupdate">
+
     <RelativeLayout
-        android:layout_width="match_parent"
         android:id="@+id/relativelistsong"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.cardview.widget.CardView
-            android:layout_width="60dp"
-            android:layout_centerVertical="true"
             android:id="@+id/cardviewbaihat"
+            android:layout_width="60dp"
             android:layout_height="60dp"
-            app:cardCornerRadius="6dp"
-            android:elevation="10dp">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:elevation="7dp"
-            android:scaleType="centerCrop"
-            android:id="@+id/textviewindex"
-            android:src="@drawable/background_primary"/>
+            android:layout_centerVertical="true"
+            android:elevation="10dp"
+            app:cardCornerRadius="6dp">
+
+            <ImageView
+                android:id="@+id/textviewindex"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="7dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background_primary" />
         </androidx.cardview.widget.CardView>
+
         <com.google.android.material.textview.MaterialTextView
-            android:textSize="16sp"
+            android:id="@+id/textviewtencakhuc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/cardviewbaihat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:ellipsize="end"
+            android:fontFamily="@font/roboto_medium"
             android:maxWidth="250dp"
             android:singleLine="true"
-            android:fontFamily="@font/roboto_medium"
-            android:id="@+id/textviewtencakhuc"
             android:text="@string/songname"
-            android:layout_marginLeft="5dp"
-            />
-        <TextView
-            android:textSize="15sp"
-            android:singleLine="true"
-            android:layout_below="@id/textviewtencakhuc"
-            android:layout_toRightOf="@id/cardviewbaihat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/singername"
-            android:id="@+id/textviewtencasi"
-            android:layout_marginLeft="5dp"/>
-        <ImageView
-            android:layout_width="11dp"
-            android:src="@drawable/ic_headphone"
-            android:layout_toRightOf= "@+id/textviewtencasi"
-            android:layout_below="@+id/textviewtencakhuc"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/imageviewlistsongluotnghe"
-            android:layout_height="11dp"/>
-        <TextView
-            android:singleLine="true"
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/textviewtencakhuc"
-            android:layout_toRightOf= "@+id/imageviewlistsongluotnghe"
-            android:text="@string/listens"
-            android:layout_marginLeft="3dp"
-            android:fontFamily="@font/roboto_regular"
-            android:id="@+id/textviewlistsonghienthiluotnghe"
-            android:layout_height="wrap_content"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="-6dp"
-            android:src="@drawable/ic_vertical_dots"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:id="@+id/more"
+            android:textSize="16sp" />
 
-            />
+        <TextView
+            android:id="@+id/textviewtencasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textviewtencakhuc"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/cardviewbaihat"
+            android:fontFamily="@font/roboto_regular"
+            android:singleLine="true"
+            android:text="@string/singername"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imageviewlistsongluotnghe"
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_below="@+id/textviewtencakhuc"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/textviewtencasi"
+            android:src="@drawable/ic_headphone" />
+
+        <TextView
+            android:id="@+id/textviewlistsonghienthiluotnghe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewtencakhuc"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/imageviewlistsongluotnghe"
+            android:fontFamily="@font/roboto_regular"
+            android:singleLine="true"
+            android:text="@string/listens" />
+
+        <ImageButton
+            android:id="@+id/btnaddplaylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparent"
+            android:minWidth="48dp"
+
+            android:minHeight="48dp"
+            android:src="@drawable/ic_vertical_dots"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </RelativeLayout>
    </RelativeLayout>

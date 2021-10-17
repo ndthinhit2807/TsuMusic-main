@@ -7,6 +7,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,6 +52,7 @@ public class ListSongActivity extends AppCompatActivity {
     ImageView imglistsong;
     ArrayList<Song> mangbaihat;
     AdapterListsong adapter_listsong;
+
     Album album = null;
     ToplistToday toplistToday = null;
     Singer singer = null;
@@ -219,6 +221,7 @@ public class ListSongActivity extends AppCompatActivity {
         floatingActionButton = findViewById(R.id.floatingbutton);
         imglistsong = findViewById(R.id.imgviewlistsong);
 
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Bài hát");
@@ -230,6 +233,8 @@ public class ListSongActivity extends AppCompatActivity {
                 Animatoo.animateSlideLeft(ListSongActivity.this);
             }
         });
+
+
 //          floatingActionButton.setEnabled(false);
     }
 //    Set hình và tên cho toplist,album,ca sĩ

@@ -6,13 +6,16 @@ import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.example.tsumusic.Activity.Playlist_Activity;
 import com.example.tsumusic.Activity.PlaysongsActivity;
 import com.example.tsumusic.Model.Song;
 import com.example.tsumusic.R;
@@ -23,6 +26,7 @@ import java.util.ArrayList;
 public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHolder> {
     Context context;
     ArrayList<Song> mangbaihat;
+    ImageButton imageButton;
     View view;
 
 
@@ -36,6 +40,7 @@ public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHo
             txttenbaihat = itemview.findViewById(R.id.textviewtencakhuc);
             hinhbaihat = itemview.findViewById(R.id.textviewindex);
             txtluotnghe = itemview.findViewById(R.id.textviewlistsonghienthiluotnghe);
+
             itemview.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -45,11 +50,21 @@ public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHo
                     Animatoo.animateSlideUp(context);
                 }
             });
+            imageButton = itemview.findViewById(R.id.btnaddplaylist);
+            imageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, Playlist_Activity.class);
+//                    intent.putExtra("Baihat", mangbaihat.get(getPosition()).getMabaihat());    //Gửi key dữ liệu đi
+                    putStringValue("idbaihat",mangbaihat.get(getPosition()).getMabaihat());
+                    context.startActivity(intent);
+                }
+            });
         }
 
     }
     public void putStringValue(String key, String value) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences("passinfo", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(key, value);
         editor.apply();
