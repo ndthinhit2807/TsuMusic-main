@@ -5,14 +5,23 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
@@ -38,10 +47,7 @@ public class Playlist_Activity extends AppCompatActivity {
     Toolbar toolbar;
     Adapter_Userplaylist adapter_userplaylist;
     CircleImageView img_Playlist;
-    RelativeLayout relativeLayout;
-    User user;
-//    SharedPreferences sharedPreferences = getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
-
+    TextView txt_add_playlist;
 
 
     @Override
@@ -50,24 +56,24 @@ public class Playlist_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_playlist);
         SharedPreferences sharedPreferences = getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
         init();
-        String username = sharedPreferences.getString("username",null);
-        String email = sharedPreferences.getString("email",null);
-        Toast.makeText(this, sharedPreferences.getString("idbaihat",null), Toast.LENGTH_SHORT).show();
+        String username = sharedPreferences.getString("username", null);
+        String email = sharedPreferences.getString("email", null);
+        Toast.makeText(this, sharedPreferences.getString("idbaihat", null), Toast.LENGTH_SHORT).show();
 //        Toast.makeText(this, getIntent().getStringExtra("Baihat"), Toast.LENGTH_SHORT).show();
-        getData(username,email);
+        getData(username, email);
     }
 
 
-    private void getData(String username,String email) {
+    private void getData(String username, String email) {
 
         Service_Data service_data = API_Service.getService();
-        Call<List<UserPlaylist>> callback = service_data.GetUserPlaylist(username,email);
+        Call<List<UserPlaylist>> callback = service_data.GetUserPlaylist(username, email);
         callback.enqueue(new Callback<List<UserPlaylist>>() {
             @Override
             public void onResponse(Call<List<UserPlaylist>> call, Response<List<UserPlaylist>> response) {
                 ArrayList<UserPlaylist> array_userplaylist = (ArrayList<UserPlaylist>) response.body();
-                adapter_userplaylist = new Adapter_Userplaylist(Playlist_Activity.this,array_userplaylist);
-                recy_Playlist.setLayoutManager(new GridLayoutManager(Playlist_Activity.this,1));
+                adapter_userplaylist = new Adapter_Userplaylist(Playlist_Activity.this, array_userplaylist);
+                recy_Playlist.setLayoutManager(new GridLayoutManager(Playlist_Activity.this, 1));
                 recy_Playlist.setAdapter(adapter_userplaylist);
             }
 
@@ -81,14 +87,15 @@ public class Playlist_Activity extends AppCompatActivity {
 
 
     private void init() {
-        recy_Playlist  = findViewById(R.id.recy_Playlist);
+        recy_Playlist = findViewById(R.id.recy_Playlist);
         toolbar = findViewById(R.id.tool_Playlist);
         img_Playlist = findViewById(R.id.img_Createplaylist);
+        txt_add_playlist = findViewById(R.id.text_Createplaylist);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Playlist");
         SharedPreferences sharedPreferences = getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
-        SharedPreferences.Editor  editor = sharedPreferences.edit();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,7 +112,87 @@ public class Playlist_Activity extends AppCompatActivity {
             }
         });
 
+        img_Playlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAddPlaylistDialog(Gravity.CENTER);
+            }
+        });
 
+        txt_add_playlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAddPlaylistDialog(Gravity.CENTER);
+            }
+        });
+
+
+    }
+
+    private void openAddPlaylistDialog(int gravity) {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_add_playlist);
+
+        Window window = dialog.getWindow();
+        if (window == null) {
+            return;
+        }
+
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        WindowManager.LayoutParams layoutParams = window.getAttributes();
+        layoutParams.gravity = gravity;
+        window.setAttributes(layoutParams);
+
+        if (Gravity.BOTTOM == gravity) {
+            dialog.setCancelable(true);
+        }
+
+        EditText edt_dialog_nameplaylist, edt_dialog_decriptionplaylist;
+        Button btn_dialog_exit, btn_dialog_save;
+
+        edt_dialog_nameplaylist = dialog.findViewById(R.id.edittext_dialog_nameplaylist);
+        edt_dialog_decriptionplaylist = dialog.findViewById(R.id.edittext_dialog_decriptionpaylist);
+        btn_dialog_exit = dialog.findViewById(R.id.btn_dialog_exit);
+        btn_dialog_save = dialog.findViewById(R.id.btn_dialog_save);
+        SharedPreferences sharedPreferences = getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", null);
+        String email = sharedPreferences.getString("email", null);
+
+        btn_dialog_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Playlist_Activity.this, "Exit", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        btn_dialog_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Service_Data service_data = API_Service.getService();
+                Call<String> callback = service_data.add_playlist(edt_dialog_nameplaylist.getText().toString(), edt_dialog_decriptionplaylist.getText().toString(),username,email);
+                callback.enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+
+                    }
+                });
+               finish();
+               Intent intent = new Intent(Playlist_Activity.this,Playlist_Activity.class);
+               startActivity(intent);
+
+            }
+        });
+
+        dialog.show();
     }
 
 }
