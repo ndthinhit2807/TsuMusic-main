@@ -38,12 +38,13 @@ public class LoginActivityTest {
 
         Thread.sleep(5000);
     }
-    //
+
+
     @Test
     public void testInCorrectUsernameOrPassword() throws InterruptedException {
 
         onView(withId(R.id.Username1)).perform(typeText("letrongnhan123"),closeSoftKeyboard());
-        onView(withId(R.id.PassWord)).perform(typeText("ahdhdhryerhr"),closeSoftKeyboard());
+        onView(withId(R.id.PassWord)).perform(typeText("letrongnhan"),closeSoftKeyboard());
         onView(withId(R.id.btnsignin)).perform(click());
 
         Thread.sleep(5000);
@@ -78,7 +79,6 @@ public class LoginActivityTest {
 
         Thread.sleep(5000);
     }
-
 
     @After
     public void tearDown() throws Exception {
