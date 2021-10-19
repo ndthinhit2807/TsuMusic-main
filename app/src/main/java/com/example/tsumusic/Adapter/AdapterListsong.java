@@ -57,6 +57,8 @@ public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHo
                     Intent intent = new Intent(context, Playlist_Activity.class);
 //                    intent.putExtra("Baihat", mangbaihat.get(getPosition()).getMabaihat());    //Gửi key dữ liệu đi
                     putStringValue("idbaihat",mangbaihat.get(getPosition()).getMabaihat());
+                    putStringValue("song_name",mangbaihat.get(getPosition()).getTenbaihat());
+
                     context.startActivity(intent);
                 }
             });

@@ -97,20 +97,28 @@ public interface Service_Data {
 //    Call<List<UserPlaylist>> GetUserPlaylist();
 
     @FormUrlEncoded
-    @POST("add_playlist.php")
-    Call<String> add_playlist(
+    @POST("create_playlist.php")
+    Call<String> create_playlist(
             @Field("playlist_name") String playlist_name,
             @Field("playlist_description") String playlist_description,
             @Field("username") String username,
             @Field("email") String email);
 
     @FormUrlEncoded
-    @POST("add_song_playlist.php")
-    Call<String> add_song_playlist(@Field("id_song") String id_song,
+    @POST("create_song_playlist.php")
+    Call<String> create_song_playlist(@Field("id_song") String id_song,
                                    @Field("playlist_name") String playlist_name,
                                    @Field("playlist_description") String playlist_description,
                                    @Field("username") String username,
                                    @Field("email") String email);
+
+    @FormUrlEncoded
+    @POST("add_song_playlist.php")
+    Call<String> add_song_playlist(
+            @Field("id_song") String id_song,
+            @Field("id_playlist") String id_playlist,
+            @Field("username") String username,
+            @Field("email") String email);
 
     @FormUrlEncoded
     @POST("signup.php")

@@ -2,6 +2,7 @@ package com.example.tsumusic.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.example.tsumusic.Activity.Playlist_Activity;
 import com.example.tsumusic.Activity.PlaysongsActivity;
 import com.example.tsumusic.Model.Song;
 import com.example.tsumusic.R;
@@ -76,7 +78,7 @@ public class Adapter_Allsong extends RecyclerView.Adapter<Adapter_Allsong.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtten, txtcasi, txtluotnghe;
         RelativeLayout relativeLayoutclick;
-        ImageView imghinh;
+        ImageView imghinh,imgaddplaylist;
         public ViewHolder(View itemview) {
             super(itemview);
             txtten = itemview.findViewById(R.id.textviewtenbaihatnghenhieunhat);
@@ -84,6 +86,8 @@ public class Adapter_Allsong extends RecyclerView.Adapter<Adapter_Allsong.ViewHo
             imghinh = itemview.findViewById(R.id.imageviewbaihatnghenhieunhat);
             txtluotnghe = itemview.findViewById(R.id.textviewsongsuggestionhienthiluotnghe);
             relativeLayoutclick = itemview.findViewById(R.id.relativesongsuggestionsclick);
+            imgaddplaylist = itemview.findViewById(R.id.allsong_add_playlist);
+
             relativeLayoutclick.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -93,6 +97,24 @@ public class Adapter_Allsong extends RecyclerView.Adapter<Adapter_Allsong.ViewHo
                     Animatoo.animateSlideUp(context);
                 }
             });
+
+            imgaddplaylist.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, Playlist_Activity.class);
+//                    intent.putExtra("Baihat", mangbaihat.get(getPosition()).getMabaihat());    //Gửi key dữ liệu đi
+                    putStringValue("idbaihat",mangbaihat.get(getPosition()).getMabaihat());
+                    putStringValue("song_name",mangbaihat.get(getPosition()).getTenbaihat());
+                    context.startActivity(intent);
+                }
+            });
+        }
+        public void putStringValue(String key, String value) {
+            SharedPreferences sharedPreferences = context.getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(key, value);
+            editor.apply();
+
         }
     }
 }

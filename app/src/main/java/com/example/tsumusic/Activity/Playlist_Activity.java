@@ -180,7 +180,7 @@ public class Playlist_Activity extends AppCompatActivity {
                 String id_song = sharedPreferences.getString("idbaihat", null);
                 if (id_song == null) {
                     Service_Data service_data = API_Service.getService();
-                    Call<String> callback = service_data.add_playlist(playlist_name,playlist_description, username, email);
+                    Call<String> callback = service_data.create_playlist(playlist_name,playlist_description, username, email);
                     callback.enqueue(new Callback<String>() {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {
@@ -198,7 +198,7 @@ public class Playlist_Activity extends AppCompatActivity {
                     startActivity(intent);
                 }else {
                     Service_Data service_data = API_Service.getService();
-                    Call<String> callback = service_data.add_song_playlist(id_song,playlist_name,playlist_description, username, email);
+                    Call<String> callback = service_data.create_song_playlist(id_song,playlist_name,playlist_description, username, email);
                     callback.enqueue(new Callback<String>() {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {
