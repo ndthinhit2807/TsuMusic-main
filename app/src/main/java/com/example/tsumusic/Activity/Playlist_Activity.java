@@ -52,13 +52,14 @@ public class Playlist_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences sharedPreferences = getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playlist);
-        SharedPreferences sharedPreferences = getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
+
         init();
         String username = sharedPreferences.getString("username", null);
         String email = sharedPreferences.getString("email", null);
-        Toast.makeText(this, sharedPreferences.getString("idbaihat", null), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, sharedPreferences.getString("idbaihat", null), Toast.LENGTH_SHORT).show();
 //        Toast.makeText(this, getIntent().getStringExtra("Baihat"), Toast.LENGTH_SHORT).show();
         getData(username, email);
     }
@@ -158,6 +159,7 @@ public class Playlist_Activity extends AppCompatActivity {
         btn_dialog_exit = dialog.findViewById(R.id.btn_dialog_exit);
         btn_dialog_save = dialog.findViewById(R.id.btn_dialog_save);
         SharedPreferences sharedPreferences = getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         String username = sharedPreferences.getString("username", null);
         String email = sharedPreferences.getString("email", null);
 
@@ -172,27 +174,62 @@ public class Playlist_Activity extends AppCompatActivity {
         btn_dialog_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Service_Data service_data = API_Service.getService();
-                Call<String> callback = service_data.add_playlist(edt_dialog_nameplaylist.getText().toString(), edt_dialog_decriptionplaylist.getText().toString(),username,email);
-                callback.enqueue(new Callback<String>() {
-                    @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
 
-                    }
+                String playlist_name = edt_dialog_nameplaylist.getText().toString();
+                String playlist_description = edt_dialog_decriptionplaylist.getText().toString();
+                String id_song = sharedPreferences.getString("idbaihat", null);
+                if (id_song == null) {
+                    Service_Data service_data = API_Service.getService();
+                    Call<String> callback = service_data.add_playlist(playlist_name,playlist_description, username, email);
+                    callback.enqueue(new Callback<String>() {
+                        @Override
+                        public void onResponse(Call<String> call, Response<String> response) {
+                            if (response.body().getres().equals("inserted")) {
+                                Toast.makeText(SignUpActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+                                startActivity(intent);
+                            }
 
-                    @Override
-                    public void onFailure(Call<String> call, Throwable t) {
+                        }
 
-                    }
-                });
-               finish();
-               Intent intent = new Intent(Playlist_Activity.this,Playlist_Activity.class);
-               startActivity(intent);
+                        @Override
+                        public void onFailure(Call<String> call, Throwable t) {
+
+                        }
+                    });
+                    finish();
+                    Intent intent = new Intent(Playlist_Activity.this, Playlist_Activity.class);
+                    startActivity(intent);
+                }else {
+                    Service_Data service_data = API_Service.getService();
+                    Call<String> callback = service_data.add_song_playlist(id_song,playlist_name,playlist_description, username, email);
+                    callback.enqueue(new Callback<String>() {
+                        @Override
+                        public void onResponse(Call<String> call, Response<String> response) {
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<String> call, Throwable t) {
+
+                        }
+                    });
+                    Toast.makeText(Playlist_Activity.this, "song playlist", Toast.LENGTH_SHORT).show();
+                    editor.remove("idbaihat").commit();
+                    finish();
+                    Intent intent = new Intent(Playlist_Activity.this, Playlist_Activity.class);
+                    startActivity(intent);
+                }
+
 
             }
         });
 
         dialog.show();
+    }
+
+    private void add_playlist() {
+
     }
 
 }
