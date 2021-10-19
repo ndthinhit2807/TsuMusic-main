@@ -184,11 +184,7 @@ public class Playlist_Activity extends AppCompatActivity {
                     callback.enqueue(new Callback<String>() {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {
-                            if (response.body().getres().equals("inserted")) {
-                                Toast.makeText(SignUpActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
-                                startActivity(intent);
-                            }
+
 
                         }
 
