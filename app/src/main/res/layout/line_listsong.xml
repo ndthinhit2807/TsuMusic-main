@@ -82,12 +82,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
             android:background="@color/transparent"
             android:minWidth="48dp"
 
             android:minHeight="48dp"
-            android:src="@drawable/ic_vertical_dots"
+            android:src="@drawable/addlist"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </RelativeLayout>

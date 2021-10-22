@@ -51,15 +51,19 @@ public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHo
                 }
             });
             imageButton = itemview.findViewById(R.id.btnaddplaylist);
+            SharedPreferences sharedPreferences = context.getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
             imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, Playlist_Activity.class);
+                    if (sharedPreferences.getString("username", null) != null) {
+                        Intent intent = new Intent(context, Playlist_Activity.class);
 //                    intent.putExtra("Baihat", mangbaihat.get(getPosition()).getMabaihat());    //Gửi key dữ liệu đi
-                    putStringValue("idbaihat",mangbaihat.get(getPosition()).getMabaihat());
-                    putStringValue("song_name",mangbaihat.get(getPosition()).getTenbaihat());
-
-                    context.startActivity(intent);
+                        putStringValue("idbaihat",mangbaihat.get(getPosition()).getMabaihat());
+                        putStringValue("song_name",mangbaihat.get(getPosition()).getTenbaihat());
+                        context.startActivity(intent);
+                    } else {
+                        Toast.makeText(context, "Bạn cần đăng nhập trước", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
         }

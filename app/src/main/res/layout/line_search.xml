@@ -44,12 +44,15 @@
         android:fontFamily="@font/roboto_regular"
         android:singleLine="true"
         android:maxWidth="250dp"/>
+
     <ImageView
+        android:id="@+id/search_song_addplaylist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="-6dp"
-        android:src="@drawable/ic_vertical_dots"
-        android:layout_alignParentRight="true"/>
+        android:src="@drawable/addlist"
+        android:layout_margin="10dp"/>
 
 </RelativeLayout>
