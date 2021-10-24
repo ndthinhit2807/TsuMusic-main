@@ -46,6 +46,7 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
     View view;
 
 
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txttenbaihat, txtcasi, txtluotnghe;
         ImageView hinhbaihat,imgmore;
@@ -66,28 +67,15 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
                     Animatoo.animateSlideUp(context);
                 }
             });
-            ibtn_Removeplaylist = itemview.findViewById(R.id.btnremoveplaylist);
+            ibtn_Removeplaylist = itemview.findViewById(R.id.btnremoveplaylist1);
             SharedPreferences sharedPreferences = context.getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
 
-//            Intent intent = ((Activity)context).getIntent();
-//            Toast.makeText(context, intent.getStringExtra("tes"), Toast.LENGTH_SHORT).show();
-//            Toast.makeText(context, sharedPreferences.getString("test",null), Toast.LENGTH_SHORT).show();
-//            if (sharedPreferences.getString("abc",null).equals("1")&&sharedPreferences.getString("userplaylist",null)!=null){
-//                ibtn_Addplaylist.setVisibility(View.INVISIBLE);
-//                ibtn_Removeplaylist.setVisibility(View.VISIBLE);
-//            }else {
                 ibtn_Removeplaylist.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (sharedPreferences.getString("username", null) != null) {
-                            Intent intent = new Intent(context, Playlist_Activity.class);
-//                    intent.putExtra("Baihat", mangbaihat.get(getPosition()).getMabaihat());    //Gửi key dữ liệu đi
-                            putStringValue("idbaihat",mangbaihat.get(getPosition()).getMabaihat());
-                            putStringValue("song_name",mangbaihat.get(getPosition()).getTenbaihat());
-                            context.startActivity(intent);
-                        } else {
-                            Toast.makeText(context, "Bạn cần đăng nhập trước", Toast.LENGTH_SHORT).show();
-                        }
+
+                            openAddPlaylistDialog(Gravity.CENTER,mangbaihat.get(getPosition()).getMabaihat());
+
                     }
                 });
             }
@@ -104,6 +92,76 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
     public AdapterListsong1(Context context, ArrayList<Song> mangbaihat) {
         this.context = context;
         this.mangbaihat = mangbaihat;
+    }
+
+    private void openAddPlaylistDialog(int gravity,String a) {
+        final Dialog dialog = new Dialog(context);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_delete_song_playlist);
+
+        Window window = dialog.getWindow();
+        if (window == null) {
+            return;
+        }
+
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        WindowManager.LayoutParams layoutParams = window.getAttributes();
+        layoutParams.gravity = gravity;
+        window.setAttributes(layoutParams);
+
+        if (Gravity.BOTTOM == gravity) {
+            dialog.setCancelable(true);
+        }
+
+        TextView txt_dialog_nameplaylist, txt_dialog_namesong;
+        Button btn_dialog_exit, btn_dialog_delete;
+
+        txt_dialog_namesong = dialog.findViewById(R.id.txt_dialog_namesong);
+        btn_dialog_exit = dialog.findViewById(R.id.btn_dialog_exitsong);
+        btn_dialog_delete = dialog.findViewById(R.id.btn_dialog_deletesong);
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        txt_dialog_namesong.setText(sharedPreferences.getString("song_name",null).toString());
+
+        String username = sharedPreferences.getString("username", null);
+        String email = sharedPreferences.getString("email", null);
+
+        btn_dialog_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        btn_dialog_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id_song = sharedPreferences.getString("idbaihat",null);
+                String id_playlist = a;
+
+                Service_Data service_data = API_Service.getService();
+                Call<String> callback = service_data.add_song_playlist(id_song,id_playlist,username,email);
+                callback.enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        Toast.makeText(context, "Thành Công", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                        Toast.makeText(context, "Thất Bại", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                editor.remove("idbaihat").commit();
+                ((Activity)context).finish();
+                Intent intent = new Intent(context, Playlist_Activity.class);
+                context.startActivity(intent);
+            }
+        });
+        dialog.show();
     }
 
 
@@ -153,74 +211,6 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
         return mangbaihat.size();
     }
 
-    private void openAddPlaylistDialog(int gravity) {
-        final Dialog dialog = new Dialog(context);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.dialog_delete_song_playlist);
 
-        Window window = dialog.getWindow();
-        if (window == null) {
-            return;
-        }
-
-        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
-        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-        WindowManager.LayoutParams layoutParams = window.getAttributes();
-        layoutParams.gravity = gravity;
-        window.setAttributes(layoutParams);
-
-        if (Gravity.BOTTOM == gravity) {
-            dialog.setCancelable(true);
-        }
-
-        TextView txt_dialog_nameplaylist, txt_dialog_namesong;
-        Button btn_dialog_exit, btn_dialog_delete;
-
-        txt_dialog_namesong = dialog.findViewById(R.id.txt_dialog_namesong);
-        btn_dialog_exit = dialog.findViewById(R.id.btn_dialog_exitsong);
-        btn_dialog_delete = dialog.findViewById(R.id.btn_dialog_deletesong);
-        SharedPreferences sharedPreferences = context.getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        txt_dialog_namesong.setText(sharedPreferences.getString("song_name",null).toString());
-
-        String username = sharedPreferences.getString("username", null);
-        String email = sharedPreferences.getString("email", null);
-
-        btn_dialog_exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        btn_dialog_delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String id_song = sharedPreferences.getString("idbaihat",null);
-                String id_playlist = array_Userplaylist.get().getMadanhsach();
-
-                Service_Data service_data = API_Service.getService();
-                Call<String> callback = service_data.add_song_playlist(id_song,id_playlist,username,email);
-                callback.enqueue(new Callback<String>() {
-                    @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
-                        Toast.makeText(context, "Thành Công", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onFailure(Call<String> call, Throwable t) {
-                        Toast.makeText(context, "Thất Bại", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                editor.remove("idbaihat").commit();
-                ((Activity)context).finish();
-                Intent intent = new Intent(context, Playlist_Activity.class);
-                context.startActivity(intent);
-            }
-        });
-        dialog.show();
-    }
 }
-}
+
