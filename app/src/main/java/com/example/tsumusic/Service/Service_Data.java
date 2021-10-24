@@ -13,6 +13,7 @@ import com.example.tsumusic.Model.UserPlaylist;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -111,6 +112,10 @@ public interface Service_Data {
                                    @Field("playlist_description") String playlist_description,
                                    @Field("username") String username,
                                    @Field("email") String email);
+    @FormUrlEncoded
+    @DELETE("delete_song_playlist.php")
+    Call<String> delete_song_playlist(@Field("playlist_id")String playlist_id,
+                                      @Field("id_song")String id_song);
 
     @FormUrlEncoded
     @POST("add_song_playlist.php")

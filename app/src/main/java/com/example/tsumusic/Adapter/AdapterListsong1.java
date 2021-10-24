@@ -1,11 +1,19 @@
 package com.example.tsumusic.Adapter;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,14 +26,22 @@ import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.tsumusic.Activity.Playlist_Activity;
 import com.example.tsumusic.Activity.PlaysongsActivity;
 import com.example.tsumusic.Model.Song;
+import com.example.tsumusic.Model.UserPlaylist;
 import com.example.tsumusic.R;
+import com.example.tsumusic.Service.API_Service;
+import com.example.tsumusic.Service.Service_Data;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.ViewHolder> {
     Context context;
     ArrayList<Song> mangbaihat;
+    ArrayList<UserPlaylist> array_Userplaylist;
     ImageButton ibtn_Addplaylist , ibtn_Removeplaylist;
     View view;
 
@@ -60,25 +76,24 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
 //                ibtn_Addplaylist.setVisibility(View.INVISIBLE);
 //                ibtn_Removeplaylist.setVisibility(View.VISIBLE);
 //            }else {
-//                ibtn_Addplaylist.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        if (sharedPreferences.getString("username", null) != null) {
-//                            Intent intent = new Intent(context, Playlist_Activity.class);
-////                    intent.putExtra("Baihat", mangbaihat.get(getPosition()).getMabaihat());    //Gửi key dữ liệu đi
-//                            putStringValue("idbaihat",mangbaihat.get(getPosition()).getMabaihat());
-//                            putStringValue("song_name",mangbaihat.get(getPosition()).getTenbaihat());
-//                            context.startActivity(intent);
-//                        } else {
-//                            Toast.makeText(context, "Bạn cần đăng nhập trước", Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                });
-//            }
+                ibtn_Removeplaylist.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (sharedPreferences.getString("username", null) != null) {
+                            Intent intent = new Intent(context, Playlist_Activity.class);
+//                    intent.putExtra("Baihat", mangbaihat.get(getPosition()).getMabaihat());    //Gửi key dữ liệu đi
+                            putStringValue("idbaihat",mangbaihat.get(getPosition()).getMabaihat());
+                            putStringValue("song_name",mangbaihat.get(getPosition()).getTenbaihat());
+                            context.startActivity(intent);
+                        } else {
+                            Toast.makeText(context, "Bạn cần đăng nhập trước", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
 
         }
 
-    }
     public void putStringValue(String key, String value) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -137,4 +152,75 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
     public int getItemCount() {
         return mangbaihat.size();
     }
+
+    private void openAddPlaylistDialog(int gravity) {
+        final Dialog dialog = new Dialog(context);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_delete_song_playlist);
+
+        Window window = dialog.getWindow();
+        if (window == null) {
+            return;
+        }
+
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        WindowManager.LayoutParams layoutParams = window.getAttributes();
+        layoutParams.gravity = gravity;
+        window.setAttributes(layoutParams);
+
+        if (Gravity.BOTTOM == gravity) {
+            dialog.setCancelable(true);
+        }
+
+        TextView txt_dialog_nameplaylist, txt_dialog_namesong;
+        Button btn_dialog_exit, btn_dialog_delete;
+
+        txt_dialog_namesong = dialog.findViewById(R.id.txt_dialog_namesong);
+        btn_dialog_exit = dialog.findViewById(R.id.btn_dialog_exitsong);
+        btn_dialog_delete = dialog.findViewById(R.id.btn_dialog_deletesong);
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        txt_dialog_namesong.setText(sharedPreferences.getString("song_name",null).toString());
+
+        String username = sharedPreferences.getString("username", null);
+        String email = sharedPreferences.getString("email", null);
+
+        btn_dialog_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        btn_dialog_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id_song = sharedPreferences.getString("idbaihat",null);
+                String id_playlist = array_Userplaylist.get().getMadanhsach();
+
+                Service_Data service_data = API_Service.getService();
+                Call<String> callback = service_data.add_song_playlist(id_song,id_playlist,username,email);
+                callback.enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        Toast.makeText(context, "Thành Công", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                        Toast.makeText(context, "Thất Bại", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                editor.remove("idbaihat").commit();
+                ((Activity)context).finish();
+                Intent intent = new Intent(context, Playlist_Activity.class);
+                context.startActivity(intent);
+            }
+        });
+        dialog.show();
+    }
+}
 }
