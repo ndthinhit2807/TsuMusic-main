@@ -87,8 +87,7 @@ public class Adapter_Userplaylist extends RecyclerView.Adapter<Adapter_Userplayl
                   public void onClick(View v) {
                       Intent intent = new Intent(context, ListSongActivity.class);
                       intent.putExtra("userplaylist",array_Userplaylist.get(getPosition()));// Gửi key dữ liệu đi
-                      putStringValue("userplaylist",array_Userplaylist.get(getPosition()).toString());// Gửi key dữ liệu đi
-                      putStringValue("abc","1");// Gửi key dữ liệu đi
+                      putStringValue("userplaylist",array_Userplaylist.get(getPosition()).getTendanhsach());// Gửi key dữ liệu đi
                       context.startActivity(intent);
                   }
               });

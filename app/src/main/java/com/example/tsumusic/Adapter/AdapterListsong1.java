@@ -73,8 +73,9 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
                 ibtn_Removeplaylist.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        Toast.makeText(context,"abc", Toast.LENGTH_SHORT).show();
 
-                            openAddPlaylistDialog(Gravity.CENTER,mangbaihat.get(getPosition()).getMabaihat());
+                            openAddPlaylistDialog(Gravity.CENTER,sharedPreferences.getString("userplaylist",""));
 
                     }
                 });
