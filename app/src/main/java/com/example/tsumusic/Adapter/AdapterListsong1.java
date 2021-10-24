@@ -73,9 +73,13 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
                 ibtn_Removeplaylist.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(context,"abc", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context,sharedPreferences.getString("userplaylist",""), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context,mangbaihat.get(getPosition()).getMabaihat(), Toast.LENGTH_SHORT).show();
+                        String idplaylist = sharedPreferences.getString("userplaylist","");
+                        String idsong =mangbaihat.get(getPosition()).getMabaihat();
 
-                            openAddPlaylistDialog(Gravity.CENTER,sharedPreferences.getString("userplaylist",""));
+                            openAddPlaylistDialog(Gravity.CENTER,idplaylist,idsong);
+//                            openAddPlaylistDialog(Gravity.CENTER,"31","102");
 
                     }
                 });
@@ -95,7 +99,7 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
         this.mangbaihat = mangbaihat;
     }
 
-    private void openAddPlaylistDialog(int gravity,String a) {
+    private void openAddPlaylistDialog(int gravity,String a,String b) {
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_delete_song_playlist);
@@ -140,10 +144,10 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
         btn_dialog_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id_song = sharedPreferences.getString("idbaihat",null);
+                String id_song = b;
 
                 Service_Data service_data = API_Service.getService();
-                Call<String> callback = service_data.delete_song_userplaylist(id_song, a);
+                Call<String> callback = service_data.delete_song_userplaylist(a, b);
                 callback.enqueue(new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
@@ -157,6 +161,7 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
                 });
                 Intent intent = new Intent(context, Playlist_Activity.class);
                 context.startActivity(intent);
+                ((Activity)context).finish();
             }
         });
         dialog.show();

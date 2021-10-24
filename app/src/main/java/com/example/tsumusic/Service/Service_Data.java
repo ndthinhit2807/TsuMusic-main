@@ -108,14 +108,15 @@ public interface Service_Data {
     @FormUrlEncoded
     @POST("create_song_playlist.php")
     Call<String> create_song_playlist(@Field("id_song") String id_song,
-                                   @Field("playlist_name") String playlist_name,
-                                   @Field("playlist_description") String playlist_description,
-                                   @Field("username") String username,
-                                   @Field("email") String email);
+                                      @Field("playlist_name") String playlist_name,
+                                      @Field("playlist_description") String playlist_description,
+                                      @Field("username") String username,
+                                      @Field("email") String email);
+
     @FormUrlEncoded
-    @DELETE("delete_song_userplaylist.php")
-    Call<String> delete_song_userplaylist(@Field("playlist_id")String playlist_id,
-                                      @Field("id_song")String id_song);
+    @POST("delete_song_userplaylist.php")
+    Call<String> delete_song_userplaylist(@Field("id_playlist") String id_playlist,
+                                          @Field("id_song") String id_song);
 
     @FormUrlEncoded
     @POST("add_song_playlist.php")
