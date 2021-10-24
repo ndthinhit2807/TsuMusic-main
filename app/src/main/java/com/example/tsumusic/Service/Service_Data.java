@@ -113,8 +113,8 @@ public interface Service_Data {
                                    @Field("username") String username,
                                    @Field("email") String email);
     @FormUrlEncoded
-    @DELETE("delete_song_playlist.php")
-    Call<String> delete_song_playlist(@Field("playlist_id")String playlist_id,
+    @DELETE("delete_song_userplaylist.php")
+    Call<String> delete_song_userplaylist(@Field("playlist_id")String playlist_id,
                                       @Field("id_song")String id_song);
 
     @FormUrlEncoded

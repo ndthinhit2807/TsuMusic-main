@@ -141,10 +141,9 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
             @Override
             public void onClick(View v) {
                 String id_song = sharedPreferences.getString("idbaihat",null);
-                String id_playlist = a;
 
                 Service_Data service_data = API_Service.getService();
-                Call<String> callback = service_data.add_song_playlist(id_song,id_playlist,username,email);
+                Call<String> callback = service_data.delete_song_userplaylist(id_song, a);
                 callback.enqueue(new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
@@ -156,15 +155,12 @@ public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.View
                         Toast.makeText(context, "Thất Bại", Toast.LENGTH_SHORT).show();
                     }
                 });
-                editor.remove("idbaihat").commit();
-                ((Activity)context).finish();
                 Intent intent = new Intent(context, Playlist_Activity.class);
                 context.startActivity(intent);
             }
         });
         dialog.show();
     }
-
 
     @NonNull
     @Override
