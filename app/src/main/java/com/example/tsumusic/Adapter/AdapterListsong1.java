@@ -1,6 +1,5 @@
 package com.example.tsumusic.Adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,23 +23,23 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHolder> {
+public class AdapterListsong1 extends RecyclerView.Adapter<AdapterListsong1.ViewHolder> {
     Context context;
     ArrayList<Song> mangbaihat;
-    ImageButton ibtn_Addplaylist, ibtn_Removeplaylist;
+    ImageButton ibtn_Addplaylist , ibtn_Removeplaylist;
     View view;
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txttenbaihat, txtcasi, txtluotnghe;
-        ImageView hinhbaihat, imgmore;
+        ImageView hinhbaihat,imgmore;
 
         public ViewHolder(View itemview) {
             super(itemview);
-            txtcasi = itemview.findViewById(R.id.textviewtencasi);
-            txttenbaihat = itemview.findViewById(R.id.textviewtencakhuc);
-            hinhbaihat = itemview.findViewById(R.id.textviewindex);
-            txtluotnghe = itemview.findViewById(R.id.textviewlistsonghienthiluotnghe);
+            txtcasi = itemview.findViewById(R.id.textviewtencasi1);
+            txttenbaihat = itemview.findViewById(R.id.textviewtencakhuc1);
+            hinhbaihat = itemview.findViewById(R.id.textviewindex1);
+            txtluotnghe = itemview.findViewById(R.id.textviewlistsonghienthiluotnghe1);
 
             itemview.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -51,31 +50,35 @@ public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHo
                     Animatoo.animateSlideUp(context);
                 }
             });
-            ibtn_Addplaylist = itemview.findViewById(R.id.btnaddplaylist);
             ibtn_Removeplaylist = itemview.findViewById(R.id.btnremoveplaylist);
             SharedPreferences sharedPreferences = context.getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
 
-//
-            ibtn_Addplaylist.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (sharedPreferences.getString("username", null) != null) {
-                        Intent intent = new Intent(context, Playlist_Activity.class);
-//                    intent.putExtra("Baihat", mangbaihat.get(getPosition()).getMabaihat());    //Gửi key dữ liệu đi
-                        putStringValue("idbaihat", mangbaihat.get(getPosition()).getMabaihat());
-                        putStringValue("song_name", mangbaihat.get(getPosition()).getTenbaihat());
-                        context.startActivity(intent);
-                    } else {
-                        Toast.makeText(context, "Bạn cần đăng nhập trước", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-
+//            Intent intent = ((Activity)context).getIntent();
+//            Toast.makeText(context, intent.getStringExtra("tes"), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context, sharedPreferences.getString("test",null), Toast.LENGTH_SHORT).show();
+//            if (sharedPreferences.getString("abc",null).equals("1")&&sharedPreferences.getString("userplaylist",null)!=null){
+//                ibtn_Addplaylist.setVisibility(View.INVISIBLE);
+//                ibtn_Removeplaylist.setVisibility(View.VISIBLE);
+//            }else {
+//                ibtn_Addplaylist.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        if (sharedPreferences.getString("username", null) != null) {
+//                            Intent intent = new Intent(context, Playlist_Activity.class);
+////                    intent.putExtra("Baihat", mangbaihat.get(getPosition()).getMabaihat());    //Gửi key dữ liệu đi
+//                            putStringValue("idbaihat",mangbaihat.get(getPosition()).getMabaihat());
+//                            putStringValue("song_name",mangbaihat.get(getPosition()).getTenbaihat());
+//                            context.startActivity(intent);
+//                        } else {
+//                            Toast.makeText(context, "Bạn cần đăng nhập trước", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
+//            }
 
         }
 
     }
-
     public void putStringValue(String key, String value) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("SettingGame", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -83,8 +86,7 @@ public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHo
         editor.apply();
 
     }
-
-    public AdapterListsong(Context context, ArrayList<Song> mangbaihat) {
+    public AdapterListsong1(Context context, ArrayList<Song> mangbaihat) {
         this.context = context;
         this.mangbaihat = mangbaihat;
     }
@@ -94,7 +96,7 @@ public class AdapterListsong extends RecyclerView.Adapter<AdapterListsong.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.line_listsong, parent, false);
+        View view = inflater.inflate(R.layout.line_listsong1, parent, false);
         return new ViewHolder(view);
     }
 

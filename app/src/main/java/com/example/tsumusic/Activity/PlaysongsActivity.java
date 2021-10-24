@@ -1,5 +1,6 @@
 package com.example.tsumusic.Activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -350,6 +351,7 @@ public class PlaysongsActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void Anhxa() {
 //        toolbar = findViewById(R.id.toolbarplaymusic);
         textCurrentTime = findViewById(R.id.textCurrentTime);

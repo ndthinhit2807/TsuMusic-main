@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.tsumusic.Adapter.AdapterListsong;
+import com.example.tsumusic.Adapter.AdapterListsong1;
 import com.example.tsumusic.Model.Album;
 import com.example.tsumusic.Model.Banner;
 import com.example.tsumusic.Model.Genre;
@@ -52,6 +53,7 @@ public class ListSongActivity extends AppCompatActivity {
     ImageView imglistsong;
     ArrayList<Song> mangbaihat;
     AdapterListsong adapter_listsong;
+    AdapterListsong1 adapter_listsong1;
 
     Album album = null;
     ToplistToday toplistToday = null;
@@ -59,6 +61,7 @@ public class ListSongActivity extends AppCompatActivity {
     Genre genre = null;
     Banner banner = null;
     UserPlaylist userPlaylist = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -194,6 +197,8 @@ public class ListSongActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void GetListsong_Userplaylist(String iduserplaylist) {
         Service_Data service_data = API_Service.getService();
         Call<List<Song>> callback = service_data.GetListsong_Userplaylist(iduserplaylist);
@@ -201,9 +206,9 @@ public class ListSongActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Song>> call, Response<List<Song>> response) {
                 mangbaihat = (ArrayList<Song>) response.body();
-                adapter_listsong = new AdapterListsong(ListSongActivity.this, mangbaihat);
+                adapter_listsong1 = new AdapterListsong1(ListSongActivity.this, mangbaihat);
                 recyclerViewdanhsachbaihat.setLayoutManager(new LinearLayoutManager(ListSongActivity.this));
-                recyclerViewdanhsachbaihat.setAdapter(adapter_listsong);
+                recyclerViewdanhsachbaihat.setAdapter(adapter_listsong1);
             }
 
             @Override

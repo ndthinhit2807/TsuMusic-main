@@ -8,12 +8,12 @@
     android:id="@+id/relativelistsongupdate">
 
     <RelativeLayout
-        android:id="@+id/relativelistsong"
+        android:id="@+id/relativelistsong1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardviewbaihat"
+            android:id="@+id/cardviewbaihat1"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_centerVertical="true"
@@ -21,7 +21,7 @@
             app:cardCornerRadius="6dp">
 
             <ImageView
-                android:id="@+id/textviewindex"
+                android:id="@+id/textviewindex1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:elevation="7dp"
@@ -30,12 +30,12 @@
         </androidx.cardview.widget.CardView>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/textviewtencakhuc"
+            android:id="@+id/textviewtencakhuc1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/cardviewbaihat"
+            android:layout_toRightOf="@id/cardviewbaihat1"
             android:ellipsize="end"
             android:fontFamily="@font/roboto_medium"
             android:maxWidth="250dp"
@@ -44,52 +44,40 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textviewtencasi"
+            android:id="@+id/textviewtencasi1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textviewtencakhuc"
+            android:layout_below="@id/textviewtencakhuc1"
             android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/cardviewbaihat"
+            android:layout_toRightOf="@id/cardviewbaihat1"
             android:fontFamily="@font/roboto_regular"
             android:singleLine="true"
             android:text="@string/singername"
             android:textSize="15sp" />
 
         <ImageView
-            android:id="@+id/imageviewlistsongluotnghe"
+            android:id="@+id/imageviewlistsongluotnghe1"
             android:layout_width="11dp"
             android:layout_height="11dp"
-            android:layout_below="@+id/textviewtencakhuc"
+            android:layout_below="@+id/textviewtencakhuc1"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:layout_toRightOf="@+id/textviewtencasi"
+            android:layout_toRightOf="@+id/textviewtencasi1"
             android:src="@drawable/ic_headphone" />
 
         <TextView
-            android:id="@+id/textviewlistsonghienthiluotnghe"
+            android:id="@+id/textviewlistsonghienthiluotnghe1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textviewtencakhuc"
+            android:layout_below="@+id/textviewtencakhuc1"
             android:layout_marginLeft="3dp"
-            android:layout_toRightOf="@+id/imageviewlistsongluotnghe"
+            android:layout_toRightOf="@+id/imageviewlistsongluotnghe1"
             android:fontFamily="@font/roboto_regular"
             android:singleLine="true"
             android:text="@string/listens" />
 
         <ImageButton
-            android:id="@+id/btnaddplaylist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@color/transparent"
-            android:minWidth="48dp"
-
-            android:minHeight="48dp"
-            android:src="@drawable/addlist"
-            tools:ignore="SpeakableTextPresentCheck" />
-        <ImageButton
-            android:id="@+id/btnremoveplaylist"
+            android:id="@+id/btnremoveplaylist1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -100,7 +88,7 @@
             android:minHeight="48dp"
             android:src="@drawable/test"
             tools:ignore="SpeakableTextPresentCheck"
-            android:visibility="invisible"/>
+        />
 
     </RelativeLayout>
    </RelativeLayout>
