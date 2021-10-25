@@ -86,9 +86,8 @@
             android:minWidth="48dp"
 
             android:minHeight="48dp"
-            android:src="@drawable/test"
-            tools:ignore="SpeakableTextPresentCheck"
-        />
+            android:src="@drawable/ic_remove"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </RelativeLayout>
    </RelativeLayout>

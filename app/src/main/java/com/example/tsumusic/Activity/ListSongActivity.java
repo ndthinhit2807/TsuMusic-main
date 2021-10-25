@@ -7,7 +7,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.tsumusic.Adapter.AdapterListsong;
-import com.example.tsumusic.Adapter.AdapterListsong1;
+import com.example.tsumusic.Adapter.Adapter_Remove_Song_In_PLaylist;
 import com.example.tsumusic.Model.Album;
 import com.example.tsumusic.Model.Banner;
 import com.example.tsumusic.Model.Genre;
@@ -53,7 +52,7 @@ public class ListSongActivity extends AppCompatActivity {
     ImageView imglistsong;
     ArrayList<Song> mangbaihat;
     AdapterListsong adapter_listsong;
-    AdapterListsong1 adapter_listsong1;
+    Adapter_Remove_Song_In_PLaylist adapter_listsong1;
 
     Album album = null;
     ToplistToday toplistToday = null;
@@ -206,7 +205,7 @@ public class ListSongActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Song>> call, Response<List<Song>> response) {
                 mangbaihat = (ArrayList<Song>) response.body();
-                adapter_listsong1 = new AdapterListsong1(ListSongActivity.this, mangbaihat);
+                adapter_listsong1 = new Adapter_Remove_Song_In_PLaylist(ListSongActivity.this, mangbaihat);
                 recyclerViewdanhsachbaihat.setLayoutManager(new LinearLayoutManager(ListSongActivity.this));
                 recyclerViewdanhsachbaihat.setAdapter(adapter_listsong1);
             }

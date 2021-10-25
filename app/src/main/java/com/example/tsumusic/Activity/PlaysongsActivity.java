@@ -139,11 +139,10 @@ public class PlaysongsActivity extends AppCompatActivity {
                         checkrandom = false;
                         imgrepeat.setImageResource(R.drawable.ic_repeat_one);
                         imgrandom.setImageResource(R.drawable.ic_shuffle);
-                        repeatnhac = true;
                     } else {
                         imgrepeat.setImageResource(R.drawable.ic_repeat_one);
-                        repeatnhac = true;
                     }
+                    repeatnhac = true;
                 } else {
                     imgrepeat.setImageResource(R.drawable.ic_repeat);
                     repeatnhac = false;
@@ -215,7 +214,7 @@ public class PlaysongsActivity extends AppCompatActivity {
                             }
                             positon = index;
                         }
-                        if (positon > mangbaihat.size() - 1) {
+                        if (positon > (mangbaihat.size() - 1)) {
                             positon = 0;
                         }
                         Service_Data service_data = API_Service.getService();
@@ -233,8 +232,8 @@ public class PlaysongsActivity extends AppCompatActivity {
                         });
                         new PlayMp3().execute(mangbaihat.get(positon).getUrlbaihat());
                         fragment_musicdisc.PlayNhac(mangbaihat.get(positon).getUrlhinhbaihat());
-                        //getSupportActionBar().setTitle(mangbaihat.get(positon).getTenbaihat());
-                        Updatetime();
+                       // getSupportActionBar().setTitle(mangbaihat.get(positon).getTenbaihat());
+                       Updatetime();
                     }
                 }
                 imgprev.setClickable(false);
@@ -276,6 +275,7 @@ public class PlaysongsActivity extends AppCompatActivity {
                             }
                             positon = index;
                         }
+
                         Service_Data service_data = API_Service.getService();
                         Call<String> callback = service_data.getupdateluotnghe("1", mangbaihat.get(positon).getMabaihat());
                         callback.enqueue(new Callback<String>() {
@@ -291,7 +291,7 @@ public class PlaysongsActivity extends AppCompatActivity {
                         });
                         fragment_musicdisc.PlayNhac(mangbaihat.get(positon).getUrlhinhbaihat());
                         new PlayMp3().execute(mangbaihat.get(positon).getUrlbaihat());
-                        // getSupportActionBar().setTitle(mangbaihat.get(positon).getTenbaihat());
+                        //getSupportActionBar().setTitle(mangbaihat.get(positon).getTenbaihat());
                         Updatetime();
                     }
                 }
