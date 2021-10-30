@@ -33,7 +33,7 @@ public class LoginActivityTest {
     public void testLoginCorrectly() throws InterruptedException {
 
         onView(withId(R.id.Username1)).perform(typeText("letrongnhan123"),closeSoftKeyboard());
-        onView(withId(R.id.PassWord)).perform(typeText("Letrongnhan123@"),closeSoftKeyboard());
+        onView(withId(R.id.PassWord)).perform(typeText("Letrongnhan1410@"),closeSoftKeyboard());
         onView(withId(R.id.btnsignin)).perform(click());
 
         Thread.sleep(5000);
@@ -64,7 +64,7 @@ public class LoginActivityTest {
     public void testUserNameNull() throws InterruptedException {
 
         onView(withId(R.id.Username1)).perform(closeSoftKeyboard());
-        onView(withId(R.id.PassWord)).perform(typeText("Letrongnhan123@"),closeSoftKeyboard());
+        onView(withId(R.id.PassWord)).perform(typeText("Letrongnhan1410@"),closeSoftKeyboard());
         onView(withId(R.id.btnsignin)).perform(click());
 
         Thread.sleep(5000);
